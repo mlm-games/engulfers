@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=<PlaceHolderName>
-GenericName=<PlaceHolderName>
+Name=Engulfers
+GenericName=Engulfers
 Comment=<PlaceholderShortDesc>
-Exec=<placeholdername> %F
+Exec=engulfers %F
 Icon=${SNAP}/meta/gui/icon.png
 Terminal=false
 Type=Application

@@ -1,14 +1,14 @@
 $ErrorActionPreference = 'Stop'
 
-$packageName = '<placeholdername>'
+$packageName = 'engulfers'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'https://github.com/mlm-games/<placeholdername>/releases/download/<PlaceHolderVersion>/<placeholdername>.exe'
+$url = 'https://github.com/mlm-games/engulfers/releases/download/0.1.0/engulfers.exe'
 
 $packageArgs = @{
   packageName   = $packageName
   fileType      = 'EXE'
   url           = $url
-  softwareName  = '<PlaceHolderName>*'
+  softwareName  = 'Engulfers*'
   checksum      = '0000000000000000000000000000000000000000000000000000000000000000'
   checksumType  = 'sha256'
   silentArgs    = "/S"
@@ -30,4 +30,4 @@ $startMenu = Join-Path $env:ProgramData "Microsoft\Windows\Start Menu\Programs"
 $shortcutFile = Join-Path $startMenu "$packageName.lnk"
 Install-ChocolateyShortcut -ShortcutFilePath $shortcutFile -TargetPath $fileLocation
 
-Write-Host "<PlaceHolderName> has been installed to $installDir"
+Write-Host "Engulfers has been installed to $installDir"
