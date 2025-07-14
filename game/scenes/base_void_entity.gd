@@ -1,13 +1,30 @@
 class_name BaseVoidEntity extends BaseEntity
 
-@onready var collision_shape_2d: CollisionShape2D = %CollisionShape2D
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
+
+var target_pos : Vector2
+var mv_tween : Tween
+
+@export var particle_configuration: ParticleComponentData
+
 
 func _ready() -> void:
-	fsm.add_states(_void_transfer_normal, collision_shape_2d.set_disabled.bind(true))
+	super()
+	fsm.add_states(_void_transfer_normal, _void_transfer_enter, _void_transfer_exit)
 	
 
-func _void_transfer_normal():
-	transform
+func _void_transfer_normal() -> void:
+	pass #Override
+
+func _void_transfer_enter() -> void:
+	ScreenEffects.flash_white(visual_component, 1)
+	animate_to_pos()
+	disable_collision()
+
+func _void_transfer_exit() -> void:
+	if mv_tween.is_running():
+		await mv_tween.finished
+	disable_collision(false)
 
 func _idle_normal() -> void:
 	velocity_comp.stop()
@@ -26,3 +43,10 @@ func animate_free(anim_time:= 0.2):
 	consume_tween.tween_property(self, "scale", Vector2.ZERO, anim_time)
 	consume_tween.parallel().tween_property(self, "rotation", 0, anim_time)
 	consume_tween.tween_callback(queue_free)
+
+func animate_to_pos() -> Tween:
+	mv_tween = create_tween().set_trans(Tween.TRANS_CUBIC)
+	mv_tween.tween_property(visual_component, "scale", Vector2.ONE * 0.27, 0.2)
+	mv_tween.tween_property(self, "global_position", target_pos, 0.3)
+	mv_tween.tween_property(visual_component, "scale", Vector2.ONE, 0.2)
+	return mv_tween

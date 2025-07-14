@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhynuxrkinm2p"]
+
+[ext_resource type="PackedScene" uid="uid://t1b02bdkr6yd" path="res://game/scenes/particle_trail.tscn" id="1_f600r"]
+
+[node name="ParticleShooter" instance=ExtResource("1_f600r")]
+spread = 0.0
+initial_velocity_min = 166.3
+initial_velocity_max = 166.3

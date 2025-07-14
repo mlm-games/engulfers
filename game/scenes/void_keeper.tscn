@@ -1,11 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dabg8sulcosd5"]
+[gd_scene load_steps=5 format=3 uid="uid://dabg8sulcosd5"]
 
 [ext_resource type="PackedScene" uid="uid://c858pjqlq4uir" path="res://game/scenes/base_entity.tscn" id="1_0haob"]
 [ext_resource type="Script" uid="uid://bk84sgibi4rb0" path="res://game/scenes/void_keeper.gd" id="2_5lt4g"]
 [ext_resource type="PackedScene" uid="uid://t1b02bdkr6yd" path="res://game/scenes/particle_trail.tscn" id="2_18c18"]
+[ext_resource type="Resource" uid="uid://o0d13hr1tawv" path="res://game/resources/void_trail_particles.tres" id="3_t8ci3"]
 
 [node name="VoidKeeper" instance=ExtResource("1_0haob")]
 script = ExtResource("2_5lt4g")
+speed = 100.0
+wander_radius = 200.0
+idle_time = 2.0
+particle_configuration = ExtResource("3_t8ci3")
 
 [node name="ParticleTrail" parent="." index="3" instance=ExtResource("2_18c18")]
 

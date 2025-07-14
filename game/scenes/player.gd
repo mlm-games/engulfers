@@ -1,4 +1,4 @@
-class_name Player extends BaseEntity 
+class_name Player extends BaseVoidEntity 
 
 #TODO: MAke 
 

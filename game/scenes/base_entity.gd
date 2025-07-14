@@ -4,6 +4,8 @@ var size := 100
 
 var fsm: CallableStateMachine = CallableStateMachine.new()
 @onready var velocity_comp: VelocityComponent = $VelocityComponent
+@onready var collision_shape_2d: CollisionShape2D = %CollisionShape2D
+@onready var visual_component: CanvasGroup = %VisualComponent
 
 var consume_tween : Tween
 
@@ -13,7 +15,7 @@ func _ready() -> void:
 	visible_on_screen_notifier_2d.screen_entered.connect(add_to_group.bind("OnScreenEntities"))
 	visible_on_screen_notifier_2d.screen_exited.connect(remove_from_group.bind("OnScreenEntities"))
 	
-
+	visual_component.material = visual_component.material.duplicate()
 
 func _idle_normal() -> void:
 	velocity_comp.stop()
@@ -32,3 +34,6 @@ func animate_free(anim_time:= 0.2):
 	consume_tween.tween_property(self, "scale", Vector2.ZERO, anim_time)
 	consume_tween.parallel().tween_property(self, "rotation", 0, anim_time)
 	consume_tween.tween_callback(queue_free)
+
+func disable_collision(disable := true):
+	collision_shape_2d.set_deferred("disabled", disable)

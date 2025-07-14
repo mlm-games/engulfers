@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://qu1w67qq821n"]
+[gd_scene load_steps=6 format=3 uid="uid://qu1w67qq821n"]
 
 [ext_resource type="PackedScene" uid="uid://c858pjqlq4uir" path="res://game/scenes/base_entity.tscn" id="1_hrenx"]
 [ext_resource type="Script" uid="uid://dfk0uix57lssn" path="res://game/scenes/void_liner.gd" id="2_7aven"]
+[ext_resource type="Resource" uid="uid://cd3seun45wtg5" path="res://game/resources/void_shooter_particles.tres" id="3_h266x"]
+[ext_resource type="PackedScene" uid="uid://bhynuxrkinm2p" path="res://game/scenes/particle_shooter_component.tscn" id="3_hxeb3"]
+[ext_resource type="Texture2D" uid="uid://cukxf57ep3k66" path="res://game/resources/void_particle.tres" id="4_vmytg"]
 
 [node name="VoidLiner" instance=ExtResource("1_hrenx")]
 script = ExtResource("2_7aven")
+throw_force = 500.0
+speed = 100.0
+wander_radius = 200.0
+idle_time = 2.0
+particle_configuration = ExtResource("3_h266x")
+
+[node name="ParticleShooter" parent="." index="6" instance=ExtResource("3_hxeb3")]
+texture = ExtResource("4_vmytg")

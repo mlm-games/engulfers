@@ -1,8 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://c858pjqlq4uir"]
+[gd_scene load_steps=9 format=3 uid="uid://c858pjqlq4uir"]
 
+[ext_resource type="Script" uid="uid://c5yw0hf43uly8" path="res://game/scenes/base_void_entity.gd" id="1_123x1"]
 [ext_resource type="Texture2D" uid="uid://bxhr5r1rfwigq" path="res://assets/assets/external/kenney/vector_complete.svg" id="1_d6o6i"]
 [ext_resource type="Script" uid="uid://dqssv5ddlmmkv" path="res://game/scripts/velocity_component.gd" id="3_123x1"]
 [ext_resource type="AnimationLibrary" uid="uid://c5w2n8g7e1bdf" path="res://game/resources/reusable_anims.tres" id="3_d6o6i"]
+[ext_resource type="Shader" uid="uid://bf1q6g6cas62n" path="res://addons/my-ecosystem-template/shaders/flash_white.gdshader" id="3_x0wcv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_123x1"]
+shader = ExtResource("3_x0wcv")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x0wcv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_epc2k"]
 
@@ -10,11 +19,23 @@
 collision_layer = 3
 collision_mask = 3
 motion_mode = 1
+script = ExtResource("1_123x1")
+
+[node name="VisualComponent" type="CanvasGroup" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_123x1")
+
+[node name="Sprite2D" type="Sprite2D" parent="VisualComponent"]
+material = SubResource("ShaderMaterial_x0wcv")
+position = Vector2(-3.8146973e-06, 7.6293945e-06)
+texture = ExtResource("1_d6o6i")
 
 [node name="VelocityComponent" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("3_123x1")
 
 [node name="AnimationComponent" type="Node" parent="."]
+unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
@@ -23,12 +44,8 @@ shape = SubResource("CircleShape2D_epc2k")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 unique_name_in_owner = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-3.8146973e-06, 7.6293945e-06)
-scale = Vector2(0.034583334, 0.063333325)
-texture = ExtResource("1_d6o6i")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 &"": ExtResource("3_d6o6i")
 }
