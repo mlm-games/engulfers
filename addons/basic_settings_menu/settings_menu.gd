@@ -1,6 +1,6 @@
 #TODO: ADD ICONS SAYING ESC FOR BACK, ENTER FOR SELECT
 #TODO: ADD pause_on_alt_tab
-#TODO: VolumeSliders makes sound when changed indicating the sound change
+#FIXME: VolumeSliders makes sound when changed indicating the sound change, but the sound sucks...
 #FIXME: resoultion items not being applied properly, check if lazy mode works
 #const BUS_MASTER = "Master"
 #const BUS_MUSIC = "Music"

@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://t1b02bdkr6yd"]
+
+[ext_resource type="Script" uid="uid://c8xa6iwwmu13q" path="res://game/scenes/particle_trail_component.gd" id="1_08ykg"]
+
+[sub_resource type="Gradient" id="Gradient_d6o6i"]
+offsets = PackedFloat32Array(0, 0.44666666, 0.48)
+colors = PackedColorArray(0.28118682, 0.28118688, 0.28118682, 1, 0.37413925, 0.37413928, 0.37413922, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cehhx"]
+gradient = SubResource("Gradient_d6o6i")
+fill = 1
+fill_from = Vector2(0.48598132, 0.55607474)
+fill_to = Vector2(1, 0.03271028)
+
+[sub_resource type="Curve" id="Curve_123x1"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_x0wcv"]
+offsets = PackedFloat32Array(0, 0.8, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.8, 0.8, 0.8, 0.4745098, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_bvhp8"]
+colors = PackedColorArray(0.42365062, 0.42365065, 0.42365062, 1, 1, 1, 1, 1)
+
+[node name="ParticleTrail" type="CPUParticles2D"]
+amount = 2
+texture = SubResource("GradientTexture2D_cehhx")
+lifetime = 2.4499999999999997
+gravity = Vector2(0, 0)
+initial_velocity_max = 5.3
+angular_velocity_max = 60.0
+angle_max = 720.0
+scale_amount_curve = SubResource("Curve_123x1")
+color_ramp = SubResource("Gradient_x0wcv")
+color_initial_ramp = SubResource("Gradient_bvhp8")
+hue_variation_max = 1.0
+script = ExtResource("1_08ykg")
+
+[node name="ScanTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://qu1w67qq821n"]
+
+[ext_resource type="PackedScene" uid="uid://c858pjqlq4uir" path="res://game/scenes/base_entity.tscn" id="1_hrenx"]
+[ext_resource type="Script" uid="uid://dfk0uix57lssn" path="res://game/scenes/void_liner.gd" id="2_7aven"]
+
+[node name="VoidLiner" instance=ExtResource("1_hrenx")]
+script = ExtResource("2_7aven")
