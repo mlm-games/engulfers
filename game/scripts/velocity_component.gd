@@ -30,13 +30,16 @@ func _physics_process(delta: float) -> void:
 
 func accelerate_to(direction: Vector2, speed: float = 100) -> void:
 	var adjusted_speed = minf(speed, speed / (get_parent().size/100))
-	velocity = velocity.lerp(direction.normalized() * speed, 1 - exp(-50 * get_physics_process_delta_time()))
+	velocity = frame_independent_lerp(velocity, direction.normalized() * adjusted_speed)
 
 func stop() -> void:
-	velocity = velocity.lerp(Vector2.ZERO, 1 - exp(-50 * get_physics_process_delta_time()))
+	velocity = frame_independent_lerp(velocity, Vector2.ZERO)
 
 func apply_knockback(force: Vector2, duration: float = 0.2) -> void:
 	if force != Vector2.ZERO:
 		_knockback_vector = force
 		_knockback_timer = duration
 		_is_knocked_back = true
+
+func frame_independent_lerp(from_velocity: Vector2, to: Vector2, damp: float = 50) -> Vector2:
+	return from_velocity.lerp(to, 1 - exp(-damp * get_physics_process_delta_time()))

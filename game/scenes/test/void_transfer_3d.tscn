@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://cv00hcj82e3vi"]
+
+[ext_resource type="PackedScene" uid="uid://bf7ekfb0clfv1" path="res://game/scenes/components/particles_base_3d.tscn" id="1_qs1un"]
+
+[sub_resource type="Curve" id="Curve_qs1un"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5833333, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_w33jo"]
+curve = SubResource("Curve_qs1un")
+
+[sub_resource type="Curve" id="Curve_7o2dt"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.34848487, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_xn81w"]
+curve = SubResource("Curve_7o2dt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_eg3ww"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 9.999977
+gravity = Vector3(0, 4, 0)
+scale_min = 0.5
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_xn81w")
+color = Color(0.5409905, 0.5409905, 0.5409905, 1)
+alpha_curve = SubResource("CurveTexture_w33jo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3m3fp"]
+transparency = 1
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_froys"]
+material = SubResource("StandardMaterial3D_3m3fp")
+radial_segments = 8
+rings = 8
+
+[node name="VoidTransfer3D" instance=ExtResource("1_qs1un")]
+
+[node name="Smoke" type="GPUParticles3D" parent="GPUParticlesNode" index="0"]
+emitting = false
+amount = 30
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_eg3ww")
+draw_pass_1 = SubResource("SphereMesh_froys")

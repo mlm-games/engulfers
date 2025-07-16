@@ -14,9 +14,7 @@ func _ready() -> void:
 	fsm.add_states(_wander_normal, _wander_enter, _wander_leave)
 	
 	fsm.set_initial_state(_wander_normal)
-	
-	particle_component.set_particle_data(particle_configuration)
-	
+		
 	particle_component.void_consume.connect(func(gp): target_pos = gp; fsm.change_state(_void_transfer_normal))
 
 func _physics_process(_delta: float) -> void: 

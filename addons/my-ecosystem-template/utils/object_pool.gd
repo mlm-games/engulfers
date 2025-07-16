@@ -34,7 +34,7 @@ var _pool_scene: PackedScene ## The scene to use for creating new objects in the
 var _available: Array[Node] = [] ## A list of inactive, ready-to-use objects.
 var _active: Array[Node] = [] ## A list of objects currently active in the scene.
 var _max_size: int ## The maximum number of objects this pool can manage.
-var release_and_add_if_full: bool = true
+var release_and_add_if_full: bool = true ## Releases existing active ones if true when available is empty
 
 ## Initializes the object pool.
 ##[br]

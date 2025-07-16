@@ -1,13 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqn0wql0x332g"]
+[gd_scene load_steps=5 format=3 uid="uid://cqn0wql0x332g"]
 
 [ext_resource type="PackedScene" uid="uid://c858pjqlq4uir" path="res://game/scenes/base_entity.tscn" id="1_0gakw"]
 [ext_resource type="Script" uid="uid://ktmfubc7ljmr" path="res://game/scripts/player_input_controller.gd" id="2_p0vpi"]
 [ext_resource type="Script" uid="uid://d0p8h5hn06vnm" path="res://game/scenes/player.gd" id="2_u5gyh"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_u5gyh"]
+viewport_path = NodePath("VisualComponent/Viewport3DTo2D")
+
 [node name="Player" instance=ExtResource("1_0gakw")]
-collision_layer = 3
-collision_mask = 2
+collision_layer = 10
 script = ExtResource("2_u5gyh")
+
+[node name="Particles2D" parent="VisualComponent" index="1"]
+texture = SubResource("ViewportTexture_u5gyh")
 
 [node name="PlayerInputController" type="Node2D" parent="." index="3"]
 script = ExtResource("2_p0vpi")

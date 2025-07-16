@@ -1,21 +1,14 @@
 [gd_resource type="Resource" script_class="ParticleComponentData" load_steps=4 format=3 uid="uid://o0d13hr1tawv"]
 
 [ext_resource type="Script" uid="uid://xnufu1pes318" path="res://game/scripts/particle_component_data.gd" id="1_ixmbr"]
+[ext_resource type="Material" uid="uid://c3mqsdu6dc6jt" path="res://game/resources/void_particle_base.tres" id="1_von6d"]
 [ext_resource type="Texture2D" uid="uid://cukxf57ep3k66" path="res://game/resources/void_particle.tres" id="2_von6d"]
-
-[sub_resource type="Gradient" id="Gradient_1"]
-offsets = PackedFloat32Array(0, 0.8, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.8, 0.8, 0.8, 0.475, 1, 1, 1, 0)
 
 [resource]
 script = ExtResource("1_ixmbr")
+process_material = ExtResource("1_von6d")
 emission_lifetime = 2.4
-direction = Vector2(0, 0)
-initial_velocity_min = 0.0
-initial_velocity_max = 5.0
-angular_velocity_max = 60.0
 texture = ExtResource("2_von6d")
-color_ramp = SubResource("Gradient_1")
 collision_enabled = false
 detection_radius = 12.0
 metadata/_custom_type_script = "uid://xnufu1pes318"

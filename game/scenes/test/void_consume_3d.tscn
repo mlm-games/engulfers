@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bl3j3ma1mkw32"]
+
+[ext_resource type="PackedScene" uid="uid://bf7ekfb0clfv1" path="res://game/scenes/components/particles_base_3d.tscn" id="1_qs1un"]
+
+[sub_resource type="Curve" id="Curve_jqtav"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.6060606, 0.77528095), -0.9269663, -0.9269663, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_equs6"]
+curve = SubResource("Curve_jqtav")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ys4r3"]
+particle_flag_align_y = true
+spread = 180.0
+initial_velocity_min = 12.0
+initial_velocity_max = 14.0
+scale_min = 0.5
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_equs6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6php"]
+albedo_color = Color(0.9764706, 0.8666667, 1, 1)
+emission_enabled = true
+emission = Color(1, 0.6745098, 1, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_73v88"]
+material = SubResource("StandardMaterial3D_q6php")
+top_radius = 0.1
+bottom_radius = 0.0
+
+[node name="VoidConsume3D" instance=ExtResource("1_qs1un")]
+
+[node name="Debris" type="GPUParticles3D" parent="GPUParticlesNode" index="0"]
+emitting = false
+amount = 24
+interp_to_end = 0.2
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ys4r3")
+draw_pass_1 = SubResource("CylinderMesh_73v88")
+
+[node name="Camera3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.290152)
+fov = 65.7

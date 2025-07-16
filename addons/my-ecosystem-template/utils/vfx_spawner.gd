@@ -24,7 +24,7 @@ static func spawn_particles(particle_scene: PackedScene, global_pos: Vector2, pa
 	
 	var particles = particle_scene.instantiate()
 	parent.add_child(particles)
-	particles.global_position = global_pos
+	#particles.global_position = global_pos
 	particles.emitting = true
 	
 	particles.finished.connect(particles.queue_free)

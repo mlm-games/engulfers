@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmmltlbfwh0bh"]
+
+[ext_resource type="Script" uid="uid://y6qslb3t86h7" path="res://intro.gd" id="1_2vhhs"]
+[ext_resource type="Texture2D" uid="uid://bfcchx4231md0" path="res://assets/assets/external/GWJ-Full-Logo-noBG.svg" id="2_0ylr6"]
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2vhhs")
+
+[node name="TextureRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03379405, 0.033777896, 0.073821716, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Logo" type="TextureRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -411.0
+offset_right = 540.0
+offset_bottom = 411.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.64720196, 0.64720196)
+pivot_offset = Vector2(540, 411)
+texture = ExtResource("2_0ylr6")

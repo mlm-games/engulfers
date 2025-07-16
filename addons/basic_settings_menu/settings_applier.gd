@@ -1,4 +1,5 @@
 extends Node
+#class_name SettingsApplier
 
 func _ready() -> void:
 	SettingsManager.profile_changed.connect(apply_all_settings)

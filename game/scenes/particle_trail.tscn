@@ -1,21 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://t1b02bdkr6yd"]
 
 [ext_resource type="Script" uid="uid://c8xa6iwwmu13q" path="res://game/scenes/void_particle_component.gd" id="1_08ykg"]
-
-[sub_resource type="Gradient" id="Gradient_d6o6i"]
-offsets = PackedFloat32Array(0, 0.44666666, 0.48)
-colors = PackedColorArray(0.28118682, 0.28118688, 0.28118682, 1, 0.37413925, 0.37413928, 0.37413922, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_cehhx"]
-gradient = SubResource("Gradient_d6o6i")
-fill = 1
-fill_from = Vector2(0.48598132, 0.55607474)
-fill_to = Vector2(1, 0.03271028)
+[ext_resource type="Texture2D" uid="uid://c57tkpiqysfw4" path="res://assets/assets/external/vortex-by-rpicster.png" id="1_cp5c7"]
+[ext_resource type="Material" uid="uid://c3mqsdu6dc6jt" path="res://game/resources/void_particle_base.tres" id="2_6cm6y"]
 
 [node name="ParticleTrail" type="GPUParticles2D"]
-amount = 2
-texture = SubResource("GradientTexture2D_cehhx")
-lifetime = 2.4499999999999997
+emitting = false
+amount = 10
+texture = ExtResource("1_cp5c7")
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource("2_6cm6y")
 script = ExtResource("1_08ykg")
 
 [node name="ScanTimer" type="Timer" parent="."]

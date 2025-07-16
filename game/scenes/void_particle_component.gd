@@ -1,14 +1,14 @@
 class_name VoidParticleComponent extends GPUParticles2D
 
 @export var particle_data: ParticleComponentData
+
+
 @onready var emitter: BaseEntity = get_parent()
 @onready var collision_area: Area2D
 signal void_consume(entity_position: Vector2)
 
 func _ready() -> void:
-	if particle_data:
-		particle_data.apply_to_particles(self)
-	
+	particle_data.apply_to_particles(self)
 	_setup_collision_area()
 	emitting = true
 
@@ -18,11 +18,11 @@ func _setup_collision_area() -> void:
 	
 	# Create shape based on particle data
 	var shape = RectangleShape2D.new()
-	shape.size = particle_data.detection_area_size if particle_data else Vector2(100, 400)
+	shape.size = particle_data.detection_area_size
 	
 	var collision_shape = CollisionShape2D.new()
 	collision_shape.shape = shape
-	collision_shape.position = particle_data.detection_area_offset if particle_data else Vector2(0, -200)
+	collision_shape.position = particle_data.detection_area_offset
 	collision_area.add_child(collision_shape)
 	
 	collision_area.collision_layer = 0
@@ -33,7 +33,7 @@ func _setup_collision_area() -> void:
 func _on_body_entered(body: BaseVoidEntity) -> void:
 	if body is BaseEntity and body != emitter:
 		void_consume.emit(body.global_position)
-		if particle_data and particle_data.consume_on_hit:
+		if particle_data.consume_on_hit:
 			body.animate_free()
 
 func set_particle_data(data: ParticleComponentData) -> void:

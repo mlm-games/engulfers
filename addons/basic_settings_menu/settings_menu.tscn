@@ -80,6 +80,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Accessibility" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/MENU_OPTIONS_ACCESSIBILITY/PanelContainer/MarginContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 20
 metadata/_edit_use_anchors_ = true

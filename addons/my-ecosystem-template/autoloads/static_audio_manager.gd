@@ -1,6 +1,6 @@
-# Purpose: A manager for playing one-shot gameplay sounds.
-# It uses an ObjectPool to efficiently manage AudioStreamPlayer instances.
-# Should be added as a child to a central Utils autoload or a main scene node (or as an autoload).
+## Purpose: A manager for playing one-shot gameplay sounds.
+## It uses an ObjectPool to efficiently manage AudioStreamPlayer instances.
+## Should be added as a child to a central Utils autoload or a main scene node (or as an autoload).
 class_name AutoloadAudioManager extends Node
 
 # Configuration

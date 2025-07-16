@@ -74,3 +74,13 @@ static func slow_motion(time_scale: float = 0.3, duration: float = 0.5) -> void:
 ## [param duration]: The duration of the vibration in seconds.
 static func rumble_controller(player_id: int = 0, weak: float = 0.5, strong: float = 0.5, duration: float = 0.2) -> void:
 	Input.start_joy_vibration(player_id, weak, strong, duration)
+
+## For straight up -> from_offset = Vector2(0, DisplayServer.screen_get_size().y * 1.25)
+static func animate_from_offscreen(node: CanvasItem, from_offset: Vector2 = DisplayServer.screen_get_size() * 1.25, duration: float = 0.5, easing: float = 0.7) -> Tween:
+		var start_pos = node.position + from_offset
+		var end_pos = node.position
+		node.position = start_pos
+		node.show()
+		var tween := node.create_tween()
+		tween.tween_property(node, "position", end_pos, duration).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		return tween

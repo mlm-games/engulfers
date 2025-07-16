@@ -47,3 +47,9 @@ const RESOLUTIONS_ARRAY : Array[Vector2i] = [
 	Vector2i(3200, 1800),
 	Vector2i(3840, 2160),
 ]
+
+const BUS_NAMES := {
+	MASTER = "Master",
+	MUSIC = "Music",
+	SFX = "Sfx"
+}
