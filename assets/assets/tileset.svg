@@ -26,14 +26,14 @@
      showgrid="true"
      inkscape:lockguides="false"
      showguides="true"
-     inkscape:zoom="1.5491983"
-     inkscape:cx="523.49658"
-     inkscape:cy="176.54293"
-     inkscape:window-width="1536"
-     inkscape:window-height="902"
+     inkscape:zoom="1"
+     inkscape:cx="208"
+     inkscape:cy="94"
+     inkscape:window-width="1129"
+     inkscape:window-height="579"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer1">
     <inkscape:grid
        id="grid1"
@@ -50,6 +50,31 @@
        enabled="true"
        visible="true"
        snapvisiblegridlinesonly="false" />
+    <sodipodi:guide
+       position="59.117781,17.380501"
+       orientation="1,0"
+       id="guide12"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="61.577637,24.574211"
+       orientation="1,0"
+       id="guide13"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="66.270373,8.6122548"
+       orientation="0,-1"
+       id="guide14"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="67.787077,11.072192"
+       orientation="0,-1"
+       id="guide15"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="67.73333,67.743984"
+       orientation="1,0"
+       id="guide16"
+       inkscape:locked="false" />
   </sodipodi:namedview>
   <defs
      id="defs1" />
@@ -58,7 +83,8 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g1">
+       id="g1"
+       transform="matrix(1.001276,0,0,1.0012751,-0.06481896,-0.06483135)">
       <rect
          style="fill:#c87137;stroke:#000000;stroke-width:2.81194;stroke-linecap:round;stroke-linejoin:round"
          id="rect1"
@@ -139,55 +165,100 @@
     <ellipse
        style="display:inline;opacity:0.653;fill:#ffccaa;stroke:none;stroke-width:2.98264;stroke-linecap:round;stroke-linejoin:round"
        id="ellipse50"
-       cx="89.428146"
-       cy="23.811485"
+       cx="171.97815"
+       cy="21.69482"
        rx="1.5885135"
        ry="1.5885137" />
     <rect
-       style="fill:#c87137;stroke:#000000;stroke-width:2.81194;stroke-linecap:round;stroke-linejoin:round"
+       style="fill:#c87137;stroke:#000000;stroke-width:2.81553;stroke-linecap:round;stroke-linejoin:round"
        id="rect3"
-       width="47.923294"
-       height="47.923302"
-       x="120.09879"
-       y="-83.395302"
-       ry="8.9856186"
+       width="47.98447"
+       height="47.984474"
+       x="52.207764"
+       y="-100.19224"
+       ry="8.9970884"
        transform="scale(1,-1)" />
     <rect
-       style="fill:#ffb380;stroke:#501616;stroke-width:2.45729;stroke-linecap:round;stroke-linejoin:round"
+       style="fill:#ffb380;stroke:#501616;stroke-width:2.46043;stroke-linecap:round;stroke-linejoin:round"
        id="rect5"
-       width="31.409363"
-       height="31.409372"
-       x="128.22864"
-       y="-74.971352"
-       ry="5.8892579"
+       width="31.449459"
+       height="31.449465"
+       x="60.347996"
+       y="-91.75753"
+       ry="5.8967752"
        transform="scale(1,-1)" />
     <ellipse
        style="display:inline;opacity:0.653;fill:#ffccaa;stroke:none;stroke-width:2.98264;stroke-linecap:round;stroke-linejoin:round"
        id="ellipse51"
-       cx="97.894814"
-       cy="30.161484"
+       cx="180.44481"
+       cy="28.044819"
        rx="1.5885135"
        ry="1.5885137" />
     <ellipse
        style="display:inline;opacity:0.653;fill:#ffccaa;stroke:none;stroke-width:2.98264;stroke-linecap:round;stroke-linejoin:round"
        id="ellipse52"
-       cx="90.48851"
-       cy="49.211483"
+       cx="173.03851"
+       cy="47.094818"
        rx="1.5885135"
        ry="1.5885137" />
     <ellipse
        style="display:inline;opacity:0.653;fill:#ffccaa;stroke:none;stroke-width:2.98264;stroke-linecap:round;stroke-linejoin:round"
        id="ellipse53"
-       cx="95.778145"
-       cy="57.67815"
+       cx="178.32814"
+       cy="55.561485"
        rx="1.5885135"
        ry="1.5885137" />
     <ellipse
        style="display:inline;opacity:0.653;fill:#ffccaa;stroke:none;stroke-width:2.98264;stroke-linecap:round;stroke-linejoin:round"
        id="ellipse54"
-       cx="90.48851"
-       cy="74.611481"
+       cx="173.03851"
+       cy="72.494812"
        rx="1.5885135"
        ry="1.5885137" />
+    <rect
+       style="fill:#c87137;stroke:#000000;stroke-width:2.81553;stroke-linecap:round;stroke-linejoin:round"
+       id="rect6"
+       width="47.98447"
+       height="47.984474"
+       x="1.4077626"
+       y="-100.19224"
+       ry="8.9970884"
+       transform="scale(1,-1)" />
+    <rect
+       style="fill:#ffb380;stroke:#501616;stroke-width:2.45729;stroke-linecap:round;stroke-linejoin:round"
+       id="rect7"
+       width="31.409363"
+       height="31.409372"
+       x="9.6953115"
+       y="-91.904678"
+       ry="5.8892579"
+       transform="scale(1,-1)" />
+    <rect
+       style="fill:#ffb380;stroke:none;stroke-width:7.47562;stroke-linecap:round;stroke-linejoin:round"
+       id="rect11"
+       width="50.799988"
+       height="50.799992"
+       x="50.799999"
+       y="-50.799995"
+       ry="0"
+       transform="scale(1,-1)" />
+    <rect
+       style="fill:#c87137;fill-opacity:1;stroke:#501616;stroke-width:2.74738;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8"
+       width="26.023958"
+       height="26.023973"
+       x="60.640354"
+       y="-40.959641"
+       ry="4.7413492"
+       transform="scale(1,-1)" />
+    <rect
+       style="fill:#ffb380;stroke:#1a1a1a;stroke-width:2.80355;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       id="rect9"
+       width="19.630859"
+       height="19.616388"
+       x="66.329971"
+       y="-35.268398"
+       ry="0"
+       transform="scale(1,-1)" />
   </g>
 </svg>

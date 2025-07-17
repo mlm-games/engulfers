@@ -7,22 +7,22 @@ var state_dictionary : Dictionary[Callable, Dictionary] = {}
 var current_state: Callable
 
 func add_states(
-	normal_state_callable: Callable,
-	enter_state_callable: Callable = Callable(),
-	leave_state_callable: Callable = Callable()
+	normal_state: Callable,
+	enter_state: Callable = Callable(),
+	leave_state: Callable = Callable()
 ):
-	state_dictionary[normal_state_callable] = {
-		&"normal": normal_state_callable,
-		&"enter": enter_state_callable,
-		&"leave": leave_state_callable
+	state_dictionary[normal_state] = {
+		&"normal": normal_state,
+		&"enter": enter_state,
+		&"leave": leave_state
 	}
 	
 
-func set_initial_state(state_callable: Callable):
-	if state_dictionary.has(state_callable):
-		_set_state(state_callable)
+func set_initial_state(state: Callable):
+	if state_dictionary.has(state):
+		_set_state(state)
 	else:
-		push_warning("No state with name ", state_callable)
+		push_warning("No state with name ", state)
 
 func update():
 	if current_state != null and state_dictionary.has(current_state):
@@ -32,19 +32,19 @@ func update():
 		else:
 			push_warning("Nonexistent normal callable for state: ", current_state)
 
-func change_state(state_callable: Callable):
-	state_changed.emit(state_callable)
-	if state_dictionary.has(state_callable):
-		_set_state.call_deferred(state_callable)
+func change_state(state: Callable):
+	state_changed.emit(state)
+	if state_dictionary.has(state):
+		_set_state.call_deferred(state)
 	else:
-		push_warning("No state with name ", state_callable)
+		push_warning("No state with name ", state)
 
-func _set_state(state_callable: Callable):
+func _set_state(state: Callable):
 	if current_state and state_dictionary.has(current_state):
-		var leave_callable : Callable = state_dictionary[current_state].leave
-		if leave_callable.is_valid(): leave_callable.call()
+		var leave : Callable = state_dictionary[current_state].leave
+		if leave.is_valid(): leave.call()
 	
-	current_state = state_callable
+	current_state = state
 	
-	var enter_callable = state_dictionary[current_state].enter
-	if enter_callable.is_valid(): enter_callable.call()
+	var enter = state_dictionary[current_state].enter
+	if enter.is_valid(): enter.call()

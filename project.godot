@@ -32,8 +32,8 @@ SettingsApplier="*res://addons/basic_settings_menu/settings_applier.gd"
 PauseMenu="*res://addons/my-ecosystem-template/pause-menu/pause_menu.tscn"
 LayerNames="*res://addons/layer_names/generated/layer_names.gd"
 CommonGlobals="*res://autoloads/common_globals.gd"
-WorldDataA="*res://game/scripts/world_data.gd"
 BgMusicPlayer="*res://addons/my-ecosystem-template/autoloads/bg_music_player.tscn"
+A="*res://game/scripts/autoload.tscn"
 
 [display]
 

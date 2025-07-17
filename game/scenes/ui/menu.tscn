@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://cgcvpk7q28k7p"]
+[gd_scene load_steps=14 format=3 uid="uid://cgcvpk7q28k7p"]
 
 [ext_resource type="Script" uid="uid://blhnhm76y0hhn" path="res://game/scripts/components/rich_text_void.gd" id="1_5ar2c"]
+[ext_resource type="Script" uid="uid://7b3nu3v2v7nw" path="res://game/scenes/ui/menu.gd" id="1_fmw4l"]
 [ext_resource type="Script" uid="uid://delwv8raptagh" path="res://game/scenes/components/particles_base_3d.gd" id="1_q71cj"]
 [ext_resource type="Script" uid="uid://cmo5qw3rubish" path="res://addons/my-ecosystem-template/buttons/anim_button.gd" id="1_qbs5s"]
 [ext_resource type="PackedScene" uid="uid://bl3j3ma1mkw32" path="res://game/scenes/test/void_consume_3d.tscn" id="2_fmw4l"]
@@ -38,6 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fmw4l")
 
 [node name="TextureRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -130,20 +132,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 custom_effects = [SubResource("RichTextEffect_h2f6c"), SubResource("RichTextEffect_qitgv"), SubResource("RichTextEffect_fmw4l")]
 
-[node name="RichTextLabel2" type="Button" parent="."]
+[node name="PlayButton" type="Button" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -373.0
-offset_top = 96.0
-offset_right = 373.5
-offset_bottom = 195.5
+offset_left = -240.0
+offset_top = 128.25
+offset_right = 240.0
+offset_bottom = 175.75
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(373.25, 49.75)
+pivot_offset = Vector2(240, 23.75)
 text = "Play"
 script = ExtResource("1_qbs5s")
 metadata/_custom_type_script = "uid://cmo5qw3rubish"

@@ -70,7 +70,7 @@ func possess(new_host: BaseEntity, on_death := false) -> void:
 
 func _void_transfer_normal() -> void:
 	player_input_controller.enabled = false
-	if not mv_tween.is_running():
-		fsm.change_state(player_controlled)
+	await mv_tween.finished #NOTE: Not using fsm.update here so wont run every frame
+	fsm.change_state(player_controlled)
 
 #endregion

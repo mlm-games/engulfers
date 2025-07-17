@@ -8,7 +8,7 @@ func _ready() -> void:
 	
 	Player.I.player_input_controller.direction_changed.connect(func(d): 
 		if d != Vector2.ZERO and !text1_shown : 
-			$TutorialLabel.set_text("Nice now capture the body using space");
+			$TutorialLabel.set_text("Nice now capture the body by pressin space (to shoot a void cpature)");
 			UIEffects.typewriter_effect($TutorialLabel)
 			text1_shown = true)
 	

@@ -44,4 +44,5 @@ const SCENE_PATHS = {
 	MENU = "uid://cgcvpk7q28k7p",
 	WORLD = "uid://d1dgb8mfo8xtw",
 	SETTINGS = "uid://dp42fom7cc3n0",
+	TUTORIAL_LEVEL = "uid://2vnoaw7gtgkd",
 }
