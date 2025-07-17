@@ -79,8 +79,17 @@ static func rumble_controller(player_id: int = 0, weak: float = 0.5, strong: flo
 static func animate_from_offscreen(node: CanvasItem, from_offset: Vector2 = DisplayServer.screen_get_size() * 1.25, duration: float = 0.5, easing: float = 0.7) -> Tween:
 		var start_pos = node.position + from_offset
 		var end_pos = node.position
-		node.position = start_pos
+		#node.position = start_pos
 		node.show()
 		var tween := node.create_tween()
-		tween.tween_property(node, "position", end_pos, duration).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		tween.tween_property(node, "position", end_pos, duration) \
+		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).from(start_pos)
+		return tween
+
+static func animate_to_offscreen(node: CanvasItem, to_offset: Vector2 = DisplayServer.screen_get_size() * 1.25, duration: float = 0.5, easing: float = 0.7) -> Tween:
+		var end_pos = node.position + to_offset
+		node.show()
+		var tween := node.create_tween()
+		tween.tween_property(node, "position", end_pos, duration) \
+		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 		return tween

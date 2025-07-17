@@ -1,6 +1,9 @@
 class_name BaseEntity extends CharacterBody2D
 
-var size := 100
+func _init() -> void:
+	fsm.add_states(_idle_normal, _idle_enter, _idle_leave)
+
+@export var size := 100
 
 var fsm: CallableStateMachine = CallableStateMachine.new()
 @onready var velocity_comp: VelocityComponent = $VelocityComponent

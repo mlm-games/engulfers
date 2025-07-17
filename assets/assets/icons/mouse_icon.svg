@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="mouse_icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="9.5901357"
+     inkscape:cx="25.077852"
+     inkscape:cy="23.200923"
+     inkscape:window-width="1536"
+     inkscape:window-height="902"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g2">
+      <g
+         id="g1"
+         transform="translate(-2.3259295,-2.3716399)"
+         inkscape:label="Mouse Icon">
+        <rect
+           style="fill:#4d4d4d;stroke:#501616;stroke-width:1.559;paint-order:fill markers stroke"
+           id="rect1"
+           width="11.940986"
+           height="16.277807"
+           x="-5.9704928"
+           y="39.79818"
+           ry="2.0645161"
+           transform="rotate(-45)" />
+        <path
+           sodipodi:type="star"
+           style="fill:#4d4d4d;stroke:#501616;stroke-width:1.559;paint-order:fill markers stroke"
+           id="path1"
+           inkscape:flatsided="true"
+           sodipodi:sides="3"
+           sodipodi:cx="15.115207"
+           sodipodi:cy="16.737328"
+           sodipodi:r1="16.264042"
+           sodipodi:r2="8.13202"
+           sodipodi:arg1="-0.072599454"
+           sodipodi:arg2="0.9745981"
+           inkscape:rounded="0.2"
+           inkscape:randomized="0"
+           d="M 31.336406,15.557604 C 31.745074,21.176792 13.096972,33.830837 8.0262776,31.37516 2.9555837,28.919483 1.3209107,6.4427298 5.9829364,3.2792186 10.644962,0.11570734 30.927738,9.9384157 31.336406,15.557604 Z"
+           inkscape:transform-center-x="-1.3449399"
+           inkscape:transform-center-y="1.6344347"
+           transform="rotate(-12.532363,44.489669,-14.766488)" />
+      </g>
+      <g
+         id="g6"
+         transform="matrix(1,0,0,-1,0,40.000336)"
+         inkscape:label="void">
+        <ellipse
+           style="fill:#4d4d4d;stroke:#501616;stroke-width:1.559;paint-order:fill markers stroke"
+           id="path2"
+           cx="20.059891"
+           cy="20.000168"
+           rx="5.755743"
+           ry="5.7697539" />
+        <path
+           style="fill:#4d4d4d;stroke:#501616;stroke-width:0.905016;paint-order:fill markers stroke"
+           id="path3"
+           sodipodi:type="arc"
+           sodipodi:cx="20.718895"
+           sodipodi:cy="18.565243"
+           sodipodi:rx="4.6013937"
+           sodipodi:ry="4.3064623"
+           sodipodi:start="0"
+           sodipodi:end="1.9350892"
+           sodipodi:arc-type="arc"
+           d="m 25.320289,18.565243 a 4.6013937,4.3064623 0 0 1 -1.990916,3.546351 4.6013937,4.3064623 0 0 1 -4.249902,0.477503"
+           sodipodi:open="true" />
+        <path
+           style="fill:#4d4d4d;stroke:#501616;stroke-width:0.861231;paint-order:fill markers stroke"
+           id="ellipse3"
+           sodipodi:type="arc"
+           sodipodi:cx="-20.00358"
+           sodipodi:cy="21.334103"
+           sodipodi:rx="4.3073206"
+           sodipodi:ry="4.1660991"
+           sodipodi:start="4.5368181"
+           sodipodi:end="0.98330551"
+           sodipodi:arc-type="arc"
+           d="m -20.755941,17.232049 a 4.3073206,4.1660991 0 0 1 4.749967,2.550841 4.3073206,4.1660991 0 0 1 -1.610169,5.018799"
+           sodipodi:open="true"
+           transform="scale(-1,1)" />
+        <ellipse
+           style="fill:#4d4d4d;stroke:#501616;stroke-width:0.769182;paint-order:fill markers stroke"
+           id="ellipse2"
+           cx="20.059891"
+           cy="20.000168"
+           rx="2.8397779"
+           ry="2.8466907"
+           transform="matrix(1,0,0,-1,0,40.000336)" />
+      </g>
+    </g>
+  </g>
+</svg>

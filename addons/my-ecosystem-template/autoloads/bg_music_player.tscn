@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://oqn3qh25vth4"]
 
 [ext_resource type="Script" uid="uid://bxfwyvw3ntd0m" path="res://game/scripts/enemy_manager.gd" id="1_ks8t4"]
-[ext_resource type="Script" uid="uid://cvy3eg2lm8jlk" path="res://game/scenes/tutorial/tutorial_manager.gd" id="2_xx2eu"]
+[ext_resource type="Script" uid="uid://cvy3eg2lm8jlk" path="res://game/scenes/levels/tutorial/tutorial_manager.gd" id="2_xx2eu"]
 
 [node name="BGMusicManager" type="AudioStreamPlayer"]
 

@@ -15,11 +15,11 @@ func _ready() -> void:
 	
 	fsm.set_initial_state(_wander_normal)
 		
-	particle_component.void_consume.connect(func(gp): target_pos = gp; fsm.change_state(_void_transfer_normal))
+	#particle_component.void_consume.connect(func(gp): target_pos = gp; fsm.change_state(_void_transfer_normal))
 
 func _physics_process(_delta: float) -> void: 
 	fsm.update()
-
+ 
 func _void_transfer_normal() -> void:
 	if not mv_tween.is_running():
 		fsm.change_state(_wander_normal)

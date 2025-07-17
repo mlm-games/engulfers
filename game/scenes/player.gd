@@ -4,22 +4,35 @@ static var I : Player #Global singelton (kinda)
 
 func _init() -> void:
 	I = self
+	super()
 	
 	fsm.add_states(possess)
+	fsm.add_states(player_controlled)
 
 #TODO: MAke
 
-var owned_body : BaseEntity = null
-
+#var owned_body : BaseVoidEntity = null
 var stamina : float = 100
+
 @onready var player_input_controller: PlayerInputController = $PlayerInputController
 @onready var velocity_component: VelocityComponent = $VelocityComponent
 
 func _ready() -> void:
-	player_input_controller.direction_changed.connect(velocity_component.accelerate_to)
+	super()
+	player_input_controller.direction_changed.connect(func(dir):
+		velocity_component.accelerate_to(dir)
+		look_at(global_position+dir)
+		)
+	player_input_controller.trigger_shoot.connect(shoot)
+	
 
-func consume():
+func void_consume():
 	animate_free()
+
+func shoot():
+	var void_proj = VoidProjectile.spawn_at_pos(global_position, self) 
+	void_proj.global_rotation = global_rotation
+
 
 func _withdraw_entity_and_transition() -> void:
 	var nearest := _find_on_screen_smaller_enemy()
@@ -44,6 +57,9 @@ func _find_on_screen_smaller_enemy() -> BaseEntity:
 
 #region State functions
 
+func player_controlled():
+	player_input_controller.enabled = true
+
 func possess(new_host: BaseEntity, on_death := false) -> void:
 	global_position = new_host.global_position
 	new_host.fsm.change_state(new_host.player_controlled)
@@ -51,5 +67,10 @@ func possess(new_host: BaseEntity, on_death := false) -> void:
 		size -= new_host.size / 2
 	else:
 		size += new_host.size / size
-	
+
+func _void_transfer_normal() -> void:
+	player_input_controller.enabled = false
+	if not mv_tween.is_running():
+		fsm.change_state(player_controlled)
+
 #endregion

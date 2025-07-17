@@ -19,4 +19,6 @@ func _process(_delta: float) -> void:
 			intro_tween.set_speed_scale(5)
 
 static func transition_to_menu_scene():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#DisplayServer.cursor_set_shape(DisplayServer.CURSOR_CROSS) #NOTE: Changes when scene changes?
 	STransitions.change_scene_with_transition(C.SCENE_PATHS.MENU)

@@ -10,8 +10,9 @@ viewport_path = NodePath("VisualComponent/Viewport3DTo2D")
 [node name="Player" instance=ExtResource("1_0gakw")]
 collision_layer = 10
 script = ExtResource("2_u5gyh")
+size = 150
 
-[node name="Particles2D" parent="VisualComponent" index="1"]
+[node name="Particles2D" parent="VisualComponent" index="0"]
 texture = SubResource("ViewportTexture_u5gyh")
 
 [node name="PlayerInputController" type="Node2D" parent="." index="3"]

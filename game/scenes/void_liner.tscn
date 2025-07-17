@@ -17,9 +17,8 @@ wander_radius = 200.0
 idle_time = 2.0
 particle_configuration = ExtResource("3_h266x")
 
-[node name="Particles2D" parent="VisualComponent" index="1"]
+[node name="Particles2D" parent="VisualComponent" index="0"]
 texture = SubResource("ViewportTexture_h266x")
 
 [node name="ParticleShooter" parent="." index="6" instance=ExtResource("3_hxeb3")]
 texture = ExtResource("4_vmytg")
-particle_data = ExtResource("3_h266x")

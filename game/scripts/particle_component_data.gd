@@ -1,4 +1,4 @@
-@icon("GPUParticles3D")
+#@icon("GPUParticles3D")
 class_name ParticleComponentData extends Resource
 
 @export var process_material : ParticleProcessMaterial

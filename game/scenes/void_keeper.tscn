@@ -15,7 +15,7 @@ wander_radius = 200.0
 idle_time = 2.0
 particle_configuration = ExtResource("3_t8ci3")
 
-[node name="Particles2D" parent="VisualComponent" index="1"]
+[node name="Particles2D" parent="VisualComponent" index="0"]
 texture = SubResource("ViewportTexture_t8ci3")
 
 [node name="ParticleTrail" parent="." index="3" instance=ExtResource("2_18c18")]

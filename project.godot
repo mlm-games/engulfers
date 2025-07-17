@@ -17,7 +17,7 @@ config/description="It consumes entities? or It is a symbiote? Mostly wanted to 
 
 
 ."
-run/main_scene="uid://d1dgb8mfo8xtw"
+run/main_scene="uid://bmmltlbfwh0bh"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0.0924416, 0.147392, 0.187741, 1)
 config/icon="res://icon.svg"
@@ -34,6 +34,10 @@ LayerNames="*res://addons/layer_names/generated/layer_names.gd"
 CommonGlobals="*res://autoloads/common_globals.gd"
 WorldDataA="*res://game/scripts/world_data.gd"
 BgMusicPlayer="*res://addons/my-ecosystem-template/autoloads/bg_music_player.tscn"
+
+[display]
+
+mouse_cursor/custom_image="uid://mnaeaqdnb3h"
 
 [editor_plugins]
 
@@ -109,8 +113,13 @@ locale/translations=PackedStringArray("res://locale/translations.ar.translation"
 2d_physics/layer_2="Entities"
 2d_physics/layer_3="Void"
 2d_physics/layer_4="Player"
+2d_physics/layer_5="Projectiles"
 2d_physics/layer_10="GameBounds"
 2d_navigation/layer_10="GameBounds"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
 
 [rendering]
 

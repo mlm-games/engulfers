@@ -1,54 +1,66 @@
 [gd_scene load_steps=8 format=4 uid="uid://2vnoaw7gtgkd"]
 
-[ext_resource type="Script" uid="uid://b5um3d2ovy0sl" path="res://game/scripts/ui.gd" id="1_m3g0s"]
-[ext_resource type="Script" uid="uid://bpyt0xmjxv7wd" path="res://game/scenes/tutorial/tutorial_world.gd" id="1_s6hp3"]
-[ext_resource type="Script" uid="uid://cvy3eg2lm8jlk" path="res://game/scenes/tutorial/tutorial_manager.gd" id="2_06t6l"]
-[ext_resource type="TileSet" uid="uid://ci4yy6s854qm2" path="res://game/scenes/test-arena-tileset.tres" id="3_msfmm"]
-[ext_resource type="PackedScene" uid="uid://cqn0wql0x332g" path="res://game/scenes/player.tscn" id="4_fc1ve"]
-[ext_resource type="PackedScene" uid="uid://dabg8sulcosd5" path="res://game/scenes/void_keeper.tscn" id="5_fc1ve"]
+[ext_resource type="Script" uid="uid://bpyt0xmjxv7wd" path="res://game/scenes/levels/tutorial/tutorial_level.gd" id="1_nl3hf"]
+[ext_resource type="TileSet" uid="uid://ci4yy6s854qm2" path="res://game/resources/test-arena-tileset.tres" id="2_qjqox"]
+[ext_resource type="Script" uid="uid://b5um3d2ovy0sl" path="res://game/scripts/ui.gd" id="3_atv7y"]
+[ext_resource type="Script" uid="uid://cvy3eg2lm8jlk" path="res://game/scenes/levels/tutorial/tutorial_manager.gd" id="4_afbqe"]
+[ext_resource type="PackedScene" uid="uid://cqn0wql0x332g" path="res://game/scenes/player.tscn" id="5_j5f0x"]
+[ext_resource type="PackedScene" uid="uid://dabg8sulcosd5" path="res://game/scenes/void_keeper.tscn" id="6_veyu2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s6hp3"]
 radius = 32.0
 height = 800.0
 
-[node name="TutorialWorld" type="Node2D"]
-script = ExtResource("1_s6hp3")
+[node name="TutorialLevel" type="Node2D"]
+script = ExtResource("1_nl3hf")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAMAAUAAQAIAAQAAAAMAAQAAQAIAAMAAAAMAAMAAQAIAAIAAAALAAUAAQAIAAQAAAALAAQAAQAIAAMAAAALAAMAAQAIAAIAAAAKAAUAAQAIAAQAAAAKAAQAAQAIAAMAAAAKAAMAAQAIAAIAAAAJAAUAAQAIAAQAAAAJAAQAAQAIAAMAAAAJAAMAAQAIAAIAAAAIAAUAAQAIAAQAAAAIAAQAAQAIAAMAAAAIAAMAAQAIAAIAAAAHAAUAAQAIAAQAAAAHAAQAAQAIAAMAAAAHAAMAAQAIAAIAAAAGAAUAAQAIAAQAAAAGAAQAAQAIAAMAAAAGAAMAAQAIAAIAAAAFAAUAAQAHAAQAAAAFAAQAAQAHAAMAAAAFAAMAAQAHAAIAAAANAAUAAQAJAAQAAAANAAQAAQAJAAMAAAANAAMAAQAJAAIAAAAFAAkAAQAHAAQAAAAFAAgAAQAHAAIAAAANAAkAAQAIAAQAAAANAAgAAQAIAAIAAAAMAAkAAQAIAAQAAAAMAAgAAQAIAAIAAAALAAkAAQAIAAQAAAALAAgAAQAIAAIAAAAKAAkAAQAIAAQAAAAKAAgAAQAIAAIAAAAJAAkAAQAIAAQAAAAJAAgAAQAIAAIAAAAIAAkAAQAIAAQAAAAIAAgAAQAIAAIAAAAHAAkAAQAIAAQAAAAHAAgAAQAIAAIAAAAGAAkAAQAIAAQAAAAGAAgAAQAIAAIAAAASAAkAAQAIAAQAAAASAAgAAQAIAAIAAAARAAkAAQAIAAQAAAARAAgAAQAIAAIAAAAQAAkAAQAIAAQAAAAQAAgAAQAIAAIAAAAPAAkAAQAIAAQAAAAPAAgAAQAIAAIAAAAOAAkAAQAIAAQAAAAOAAgAAQAIAAIAAAA=")
-tile_set = ExtResource("3_msfmm")
+tile_set = ExtResource("2_qjqox")
+metadata/_edit_lock_ = true
 
 [node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("1_m3g0s")
+script = ExtResource("3_atv7y")
 
 [node name="TutorialLabel" type="RichTextLabel" parent="."]
 offset_left = 495.0
 offset_top = 119.0
-offset_right = 664.0
-offset_bottom = 162.0
+offset_right = 725.0
+offset_bottom = 190.89
 text = "Press WASD to Move "
+metadata/_edit_use_anchors_ = true
 
 [node name="TutorialManager" type="Node" parent="."]
-script = ExtResource("2_06t6l")
+script = ExtResource("4_afbqe")
 metadata/_custom_type_script = "uid://cvy3eg2lm8jlk"
 
-[node name="Player" parent="." instance=ExtResource("4_fc1ve")]
+[node name="Player" parent="." instance=ExtResource("5_j5f0x")]
 position = Vector2(488, 297)
 
-[node name="VoidKeeper" parent="." instance=ExtResource("5_fc1ve")]
-position = Vector2(743, 307)
+[node name="VoidKeeper" parent="." instance=ExtResource("6_veyu2")]
+position = Vector2(380, 578)
 particle_configuration = null
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
 anchor_mode = 0
 
-[node name="2ndTrigger" type="Area2D" parent="."]
+[node name="TriggerArea1" type="Area2D" parent="."]
 position = Vector2(746, 576)
 collision_layer = 0
-collision_mask = 0
+collision_mask = 10
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea1"]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_s6hp3")
+
+[node name="TriggerAreaEnd" type="Area2D" parent="."]
+position = Vector2(1215, 322)
+collision_layer = 0
+collision_mask = 8
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="2ndTrigger"]
-rotation = 1.5707964
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerAreaEnd"]
 shape = SubResource("CapsuleShape2D_s6hp3")

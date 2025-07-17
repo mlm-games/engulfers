@@ -1,6 +1,8 @@
 # By firebelley's github gist (slightly modified)
 class_name CallableStateMachine
 
+signal state_changed(state: Callable)
+
 var state_dictionary : Dictionary[Callable, Dictionary] = {}
 var current_state: Callable
 
@@ -31,6 +33,7 @@ func update():
 			push_warning("Nonexistent normal callable for state: ", current_state)
 
 func change_state(state_callable: Callable):
+	state_changed.emit(state_callable)
 	if state_dictionary.has(state_callable):
 		_set_state.call_deferred(state_callable)
 	else:
