@@ -1,5 +1,16 @@
 class_name NonTutorialLevel extends BaseLevel
 
+var win_timer : Timer = Timer.new():
+	get: 
+		if is_instance_valid(win_timer): 
+			if !win_timer.is_stopped(): return win_timer
+			else: win_timer.start(0.5); return win_timer
+		
+		var val = Timer.new()
+		val.autostart = false
+		val.start(0.5)
+		add_child(val)
+		return val #Its almost the same as Randtimer.new but whatever
 
 func _ready() -> void:
 	
@@ -7,7 +18,7 @@ func _ready() -> void:
 	
 	Player.I.fsm.state_changed.connect(func(s): 
 		if s == Player.I._void_transfer_normal:
-			await get_tree().create_timer(2).timeout
+			await win_timer.timeout
 			if %EntityNode.get_children().is_empty():
 				complete_level()
 	)

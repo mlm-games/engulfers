@@ -13,6 +13,8 @@ var attacker: Node2D = null  # Entity that shot at us
 func _ready() -> void:
 	super()
 	
+	fsm.add_states(_provoked_chase_normal)
+	
 	shoot_timer = Timer.new()
 	shoot_timer.wait_time = shoot_interval
 	shoot_timer.autostart = true
@@ -29,13 +31,13 @@ func _ready() -> void:
 
 func _shoot_random_target() -> void:
 	if not is_provoked:
-		var targets = get_tree().get_nodes_in_group("OnScreenEntities")
-		if targets.empty(): return
-		var target = targets[randi() % targets.size()]
+		var targets := get_tree().get_nodes_in_group("OnScreenEntities")
+		if targets.is_empty(): return
+		var target := targets[randi() % targets.size()]
 		_shoot_at(target)
 
 func _shoot_at(target: Node2D) -> void:
-	var projectile = Util.spawn_at_pos(self, C.Projectiles.VoidLinerProjectile)
+	var projectile := Util.spawn_at_pos(self, C.Projectiles.VoidLinerProjectile)
 	projectile.direction = (target.global_position - global_position).normalized()
 	#AudioM.play_sound(C.Audio.Dash)
 
@@ -46,7 +48,7 @@ func _on_missed_shot(body: Node2D) -> void:
 	if body is VoidProjectile and body.emitter != self:
 		attacker = body.emitter
 		# Reset provoked timer (extend if already running)
-		if provoked_timer.is_running(): provoked_timer.stop()
+		if !provoked_timer.is_stopped(): provoked_timer.stop()
 		provoked_timer.start()
 		$AnimationPlayer.play("provoked_warning")  # Flashes red
 		print(get_class(), "Missed shot detected!")

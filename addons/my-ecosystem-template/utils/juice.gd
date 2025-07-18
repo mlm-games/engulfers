@@ -50,7 +50,7 @@ static func squash_stretch(node: Node2D, squash_amount: Vector2 = Vector2(1.3, 0
 ## [param duration]: The total time in seconds for the animation.
 ##[br]
 ## [param from_scale]: The initial scale multiplier (0.0 means it starts invisible).
-static func pop_in(node: Node2D, duration: float = 0.3, from_scale: float = 0.0) -> void:
+static func pop_in(node: CanvasItem, duration: float = 0.3, from_scale: float = 0.0) -> void:
 	var target_scale = node.scale
 	node.scale = target_scale * from_scale
 	

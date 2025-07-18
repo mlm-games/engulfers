@@ -2,7 +2,7 @@ extends CanvasLayer
 
 signal screen_covered
 
-#const CIRCLE_SHADER = preload("uid://dnms5hsmipkyv")
+const VOID_SHADER = preload("uid://bq53rqi87vvrh")
 
 @onready var transition_player: AnimationPlayer = $TransitionRect/TransitionPlayer
 @onready var transition_rect : ColorRect = $TransitionRect
@@ -17,18 +17,18 @@ func _ready() -> void:
 	white_rect.visible = false
 	shader_rect.visible = false
 
-func change_scene_with_transition(scene_path: String, anim_name: String = "fadeToBlack", pop_up: bool = false) -> void:
-	transition(anim_name)
+func change_scene_with_transition(scene_path: String, anim_name: String = "circleIn", speed_scale:= 1.0, pop_up: bool = false) -> void:
+	transition(anim_name, speed_scale)
 	await screen_covered
 	if !pop_up:
 			get_tree().change_scene_to_file(scene_path)
 
-func change_scene_with_transition_packed(scene: PackedScene, anim_name: String = "fadeToBlack") -> void:
-	transition(anim_name)
+func change_scene_with_transition_packed(scene: PackedScene, anim_name: String = "circleIn", speed_scale:= 1.0) -> void:
+	transition(anim_name, speed_scale)
 	await screen_covered
 	get_tree().change_scene_to_packed(scene)
 
-func transition(anim_name: StringName = "fadeToBlack", single_transition_only: bool = false, speed_scale: float = 1, pop_up: bool = false) -> void:
+func transition(anim_name: StringName = "circleIn", speed_scale: float = 1, single_transition_only: bool = false, pop_up: bool = false) -> void:
 	if single_transition_only:
 			single_transition = true
 	match anim_name:
@@ -43,13 +43,13 @@ func transition(anim_name: StringName = "fadeToBlack", single_transition_only: b
 					transition_player.play(anim_name)
 			"circleIn":
 					transition_player.speed_scale = speed_scale
-					#transition_rect.material.shader = CIRCLE_SHADER
+					transition_rect.material.shader = VOID_SHADER
 					transition_rect.modulate = Color.WHITE
 					transition_rect.visible = true
 					transition_player.play(anim_name)
 			"circleOut":
 					transition_player.speed_scale = speed_scale
-					#transition_rect.material.shader = CIRCLE_SHADER
+					transition_rect.material.shader = VOID_SHADER
 					transition_rect.visible = true
 					transition_rect.modulate = Color.WHITE
 					transition_player.play(anim_name)
