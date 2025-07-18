@@ -1,58 +1,80 @@
-class_name VoidLiner extends BaseVoidEntity
+class_name VoidLiner extends VoidKeeper
 
-@export var throw_force: float = 500.0
+@export var shoot_interval: float = 3.0      # Random shot every 3s
+@export var provoked_shoot_interval: float = 1.0  # Faster when provoked
+@export var chase_speed_multiplier: float = 1.5   # Faster chase speed
 
-#func _input(event: InputEvent) -> void:
-	#if event.is_action_pressed("perform_trigger_action"):
-		#_throw_void()
+var shoot_timer: Timer
+var provoked_timer: Timer
+var is_provoked: bool = false
+var attacker: Node2D = null  # Entity that shot at us
 
-#@export var dash_speed: float = 200.0
-#@export var dash_cooldown: float = 5.0
-@export var speed: float = 100.0
-@export var wander_radius: float = 200.0
-@export var idle_time: float = 2.0
-
-@onready var particle_component: VoidParticleComponent = $ParticleShooter
 
 func _ready() -> void:
 	super()
-	fsm.add_states(_idle_normal, _idle_enter, _idle_leave)
-	fsm.add_states(_wander_normal, _wander_enter, _wander_leave)
 	
-	fsm.set_initial_state(_wander_normal)
+	shoot_timer = Timer.new()
+	shoot_timer.wait_time = shoot_interval
+	shoot_timer.autostart = true
+	shoot_timer.timeout.connect(_shoot_random_target)
+	add_child(shoot_timer)
 	
-	particle_component.set_particle_data(particle_configuration)
+	provoked_timer = Timer.new()
+	provoked_timer.wait_time = 2.0 
+	provoked_timer.one_shot = true
+	provoked_timer.timeout.connect(_trigger_provoked_state)
+	add_child(provoked_timer)
 	
-	#FIXME: Just doesn't work for some reason
-	particle_component.void_consume.connect(func(gp): target_pos = gp; fsm.change_state(_void_transfer_normal))
+	%MissedProjectileDetectionArea2D.area_entered.connect(_on_missed_shot)
 
-func _physics_process(_delta: float) -> void: 
-	fsm.update()
+func _shoot_random_target() -> void:
+	if not is_provoked:
+		var targets = get_tree().get_nodes_in_group("OnScreenEntities")
+		if targets.empty(): return
+		var target = targets[randi() % targets.size()]
+		_shoot_at(target)
 
-func _void_transfer_enter() -> void:
-	super()
-	
+func _shoot_at(target: Node2D) -> void:
+	var projectile = Util.spawn_at_pos(self, C.Projectiles.VoidLinerProjectile)
+	projectile.direction = (target.global_position - global_position).normalized()
+	#AudioM.play_sound(C.Audio.Dash)
+
+#region Provoked state
+
+
+func _on_missed_shot(body: Node2D) -> void:
+	if body is VoidProjectile and body.emitter != self:
+		attacker = body.emitter
+		# Reset provoked timer (extend if already running)
+		if provoked_timer.is_running(): provoked_timer.stop()
+		provoked_timer.start()
+		$AnimationPlayer.play("provoked_warning")  # Flashes red
+		print(get_class(), "Missed shot detected!")
+
+func _trigger_provoked_state() -> void:
+	is_provoked = true
+	shoot_timer.wait_time = provoked_shoot_interval
+	shoot_timer.timeout.disconnect(_shoot_random_target)
+	shoot_timer.timeout.connect(_shoot_at_attacker)
+	fsm.change_state(_provoked_chase_normal)
+	print("Provoked!")
+
+func _provoked_chase_normal() -> void:
+	if attacker:
+		velocity_comp.accelerate_to((attacker.global_position - global_position).normalized(), wander_speed * chase_speed_multiplier)
+		# Stop chasing if attacker is out of range
+		if global_position.distance_to(attacker.global_position) > 500:
+			_exit_provoked_state()
+
+func _shoot_at_attacker() -> void:
+	if attacker: _shoot_at(attacker)
+
+func _exit_provoked_state() -> void:
+	is_provoked = false
+	attacker = null
+	shoot_timer.wait_time = shoot_interval
+	shoot_timer.timeout.disconnect(_shoot_at_attacker)
+	shoot_timer.timeout.connect(_shoot_random_target)
 	fsm.change_state(_wander_normal)
 
-func _wander_normal() -> void:
-	if global_position.distance_to(target_pos) < randf_range(1, 10.0):
-		fsm.change_state(_idle_normal)
-	velocity_comp.accelerate_to((target_pos - global_position).normalized(), speed)
-
-func _wander_enter() -> void:
-	target_pos = global_position + Vector2(randf_range(-wander_radius, wander_radius), randf_range(-wander_radius, wander_radius))
-
-func _wander_leave() -> void:
-	pass
-
-func _idle_enter() -> void:
-	await get_tree().create_timer(randf_range(1.0, idle_time)).timeout
-	fsm.change_state(_wander_normal)
-
-
-
-#Cut for scope creep, can add later
-#func _on_dash_timer_timeout() or _dash_normal -> void:
-	#speed = dash_speed
-	#await get_tree().create_timer(0.3).timeout
-	#speed = base_speed or speed / 2
+#endregion

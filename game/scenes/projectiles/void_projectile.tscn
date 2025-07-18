@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbt3a13kvykbv"]
 
-[ext_resource type="Script" uid="uid://dg72mhblfd8y7" path="res://game/scenes/components/void_projectile.gd" id="1_xslmn"]
+[ext_resource type="Script" uid="uid://dg72mhblfd8y7" path="res://game/scenes/projectiles/void_projectile.gd" id="1_xslmn"]
 [ext_resource type="Texture2D" uid="uid://c57tkpiqysfw4" path="res://assets/assets/external/vortex-by-rpicster.png" id="2_qen6g"]
 
 [sub_resource type="Curve" id="Curve_xslmn"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99456525, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.3820225), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_04hyr"]
@@ -12,7 +12,7 @@ point_count = 2
 [node name="VoidProjectile" type="Area2D"]
 top_level = true
 collision_layer = 16
-collision_mask = 2
+collision_mask = 10
 script = ExtResource("1_xslmn")
 projectile_speed_dropoff_curve = SubResource("Curve_xslmn")
 

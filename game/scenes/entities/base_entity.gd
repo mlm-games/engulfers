@@ -6,19 +6,22 @@ func _init() -> void:
 @export var size := 100
 
 var fsm: CallableStateMachine = CallableStateMachine.new()
+var consume_tween : Tween
+
 @onready var velocity_comp: VelocityComponent = $VelocityComponent
 @onready var collision_shape_2d: CollisionShape2D = %CollisionShape2D
 @onready var visual_component: CanvasGroup = %VisualComponent
-
-var consume_tween : Tween
-
 @onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = %VisibleOnScreenNotifier2D
+@onready var base_size := size
 
 func _ready() -> void:
 	visible_on_screen_notifier_2d.screen_entered.connect(add_to_group.bind("OnScreenEntities"))
 	visible_on_screen_notifier_2d.screen_exited.connect(remove_from_group.bind("OnScreenEntities"))
 	
 	visual_component.material = visual_component.material.duplicate()
+
+func _physics_process(_delta: float) -> void:
+	fsm.update()
 
 func _idle_normal() -> void:
 	velocity_comp.stop()

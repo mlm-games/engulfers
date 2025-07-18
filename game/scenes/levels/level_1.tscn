@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8p2hg2wy36d3"]
+
+[ext_resource type="PackedScene" uid="uid://di8x0d1gjray0" path="res://game/scenes/levels/base_level.tscn" id="1_mxxve"]
+[ext_resource type="Script" uid="uid://dtrq6wvcv5etj" path="res://game/scenes/levels/level_1.gd" id="2_1k2pe"]
+[ext_resource type="PackedScene" uid="uid://dabg8sulcosd5" path="res://game/scenes/entities/void_keeper.tscn" id="2_5gvcb"]
+
+[node name="Level1" instance=ExtResource("1_mxxve")]
+script = ExtResource("2_1k2pe")
+
+[node name="VoidKeeper" parent="EntityNode" index="0" instance=ExtResource("2_5gvcb")]
+position = Vector2(704, 325)
+
+[node name="VoidKeeper2" parent="EntityNode" index="1" instance=ExtResource("2_5gvcb")]
+position = Vector2(722, 179)
+
+[node name="VoidKeeper3" parent="EntityNode" index="2" instance=ExtResource("2_5gvcb")]
+position = Vector2(689, 438)
+
+[node name="VoidKeeper4" parent="EntityNode" index="3" instance=ExtResource("2_5gvcb")]
+position = Vector2(486, 175)

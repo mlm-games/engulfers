@@ -1,14 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://oqn3qh25vth4"]
+[gd_scene load_steps=2 format=3 uid="uid://oqn3qh25vth4"]
 
 [ext_resource type="Script" uid="uid://bxfwyvw3ntd0m" path="res://game/scripts/enemy_manager.gd" id="1_ks8t4"]
-[ext_resource type="Script" uid="uid://cvy3eg2lm8jlk" path="res://game/scenes/levels/tutorial/tutorial_manager.gd" id="2_xx2eu"]
 
 [node name="BGMusicManager" type="AudioStreamPlayer"]
 
 [node name="EnemyManager" type="Node" parent="."]
 script = ExtResource("1_ks8t4")
 metadata/_custom_type_script = "uid://bxfwyvw3ntd0m"
-
-[node name="TutorialManager" type="Node" parent="."]
-script = ExtResource("2_xx2eu")
-metadata/_custom_type_script = "uid://cvy3eg2lm8jlk"

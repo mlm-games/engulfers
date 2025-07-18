@@ -30,8 +30,7 @@ func void_consume():
 	animate_free()
 
 func shoot():
-	var void_proj = VoidProjectile.spawn_at_pos(global_position, self) 
-	void_proj.global_rotation = global_rotation
+	Util.spawn_at_pos(self, C.Projectiles.PlayerVoidProjectile)
 
 
 func _withdraw_entity_and_transition() -> void:
@@ -59,6 +58,7 @@ func _find_on_screen_smaller_enemy() -> BaseEntity:
 
 func player_controlled():
 	player_input_controller.enabled = true
+	if collision_shape_2d.disabled: disable_collision(false)
 
 func possess(new_host: BaseEntity, on_death := false) -> void:
 	global_position = new_host.global_position
@@ -70,7 +70,7 @@ func possess(new_host: BaseEntity, on_death := false) -> void:
 
 func _void_transfer_normal() -> void:
 	player_input_controller.enabled = false
-	await mv_tween.finished #NOTE: Not using fsm.update here so wont run every frame
-	fsm.change_state(player_controlled)
+	if !mv_tween.is_running(): #NOTE: Not using fsm.update will not cause this to be ran at all...
+		fsm.change_state(player_controlled)
 
 #endregion

@@ -42,7 +42,22 @@ func animate_to_pos() -> void:
 
 func on_void_body_hit(body: BaseVoidEntity) -> void:
 	##If your collision mask is right, then you wouldn't need the "is body" condn
-	if body.size < size:
+	if body.size <= size and body != self:
 		target_pos = body.global_position
 		fsm.change_state(_void_transfer_normal)
 		body.animate_free()
+
+
+#region Reusable Enemy States 
+
+func base_chase_normal(chase_range, speed) -> void:
+	var player_pos = Player.I.global_position
+	if global_position.distance_to(player_pos) > chase_range:
+		Player.I.animate_free()
+	velocity_comp.accelerate_to((player_pos - global_position).normalized(), speed)
+
+
+
+
+
+#endregion

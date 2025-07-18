@@ -34,6 +34,7 @@ LayerNames="*res://addons/layer_names/generated/layer_names.gd"
 CommonGlobals="*res://autoloads/common_globals.gd"
 BgMusicPlayer="*res://addons/my-ecosystem-template/autoloads/bg_music_player.tscn"
 A="*res://game/scripts/autoload.tscn"
+BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
 
 [display]
 
@@ -41,7 +42,7 @@ mouse_cursor/custom_image="uid://mnaeaqdnb3h"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/basic_settings_menu/plugin.cfg", "res://addons/layer_names/plugin.cfg")
+enabled=PackedStringArray("res://addons/basic_settings_menu/plugin.cfg", "res://addons/better-terrain/plugin.cfg", "res://addons/layer_names/plugin.cfg")
 
 [global_group]
 

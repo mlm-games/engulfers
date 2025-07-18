@@ -42,9 +42,11 @@ func change_state(state: Callable):
 func _set_state(state: Callable):
 	if current_state and state_dictionary.has(current_state):
 		var leave : Callable = state_dictionary[current_state].leave
-		if leave.is_valid(): leave.call()
+		@warning_ignore("standalone_ternary")
+		await leave.call() if leave.is_valid() else printerr("Leave callable is not valid.")
 	
 	current_state = state
 	
 	var enter = state_dictionary[current_state].enter
-	if enter.is_valid(): enter.call()
+	@warning_ignore("standalone_ternary")
+	await enter.call() if enter.is_valid() else printerr("Enter callable is not valid.")

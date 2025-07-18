@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpncxcrpvt8jl"]
+[gd_scene load_steps=3 format=3 uid="uid://bpncxcrpvt8jl"]
 
 [ext_resource type="Script" uid="uid://ixpppcuhpbdm" path="res://game/scripts/autoload.gd" id="1_3yjwb"]
+[ext_resource type="Script" uid="uid://d0om2ye5hhdj1" path="res://game/scripts/managers/level_manager.gd" id="2_tcxmy"]
 
 [node name="AutoLoad" type="Node"]
 script = ExtResource("1_3yjwb")
+
+[node name="LevelManager" type="Node" parent="."]
+script = ExtResource("2_tcxmy")
+metadata/_custom_type_script = "uid://d0om2ye5hhdj1"

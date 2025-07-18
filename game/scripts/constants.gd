@@ -32,17 +32,32 @@ const LoadedAudio = { #All sfx
 }
 
 const Enemies = {
-	VoidKeeper = preload("res://game/scenes/void_keeper.tscn"),
+	VoidKeeper = preload("uid://dabg8sulcosd5"),
 	#VoidLiner = preload("res://game/scenes/void_liner.tscn"),
+}
+
+const Projectiles = {
+	PlayerVoidProjectile = "uid://bbt3a13kvykbv",
+	VoidKeeperProjectile = "uid://6gqwjut13rcg",
+	VoidLinerProjectile = "uid://ccapqmsd0lvuq"
 }
 
 enum Groups {
 	ENTITIES
 }
 
-const SCENE_PATHS = {
+const SCENE_PATHS = { #NOTE: To prevent cyclic inheritance error
 	MENU = "uid://cgcvpk7q28k7p",
 	WORLD = "uid://d1dgb8mfo8xtw",
 	SETTINGS = "uid://dp42fom7cc3n0",
 	TUTORIAL_LEVEL = "uid://2vnoaw7gtgkd",
+}
+
+const Levels : Dictionary[StringName, PackedScene] = {
+	Level0 = preload("uid://2vnoaw7gtgkd"),
+	Level1 = preload("uid://c8p2hg2wy36d3"),
+	#Level2 = preload(""),
+	#Level3 = preload(""),
+	#Level4 = preload(""),
+	#Level5 = preload(""),
 }

@@ -1,20 +1,24 @@
 class_name VoidHunter extends VoidKeeper
 
-@export var chase_range := 200
+@export var chase_range: float = 200.0
+@export var dash_interval: float = 3.0
+
+var dash_timer: Timer
 
 func _ready() -> void:
-	fsm.add_states(_chase_normal, _chase_enter, _chase_leave)
-	fsm.set_initial_state(_chase_normal)
-
+	super()
+	fsm.add_states(_chase_normal)
+	fsm.set_initial_state(_wander_normal)  # From parent
+	
+	dash_timer = Timer.new()
+	dash_timer.wait_time = dash_interval
+	dash_timer.autostart = true
+	dash_timer.timeout.connect(_dash)
+	add_child(dash_timer)
 
 func _chase_normal() -> void:
-	var player_pos = WorldDataA.get_player_pos()
-	if global_position.distance_to(player_pos) > chase_range:
-		fsm.change_state(_wander_normal)
-	velocity_comp.accelerate_to((player_pos - global_position).normalized(), speed)
+	base_chase_normal(chase_range, wander_speed)
 
-func _chase_enter() -> void:
-	print("Hunter chasing player!")
-
-func _chase_leave() -> void:
-	pass
+func _dash() -> void:
+	if fsm.current_state == _chase_normal:
+		velocity_comp.apply_knockback((Player.I.global_position - global_position).normalized() * 300, 0.3)

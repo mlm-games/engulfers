@@ -8,3 +8,7 @@ func _input(event):
 					DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 				elif DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
 					DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			if event.keycode == KEY_EQUAL and event.pressed: #KEY_PLUS doesnt work for some reason
+				Engine.time_scale += 1
+			if event.keycode == KEY_MINUS and event.pressed:
+				Engine.time_scale -= 1

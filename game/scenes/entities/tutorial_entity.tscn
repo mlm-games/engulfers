@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ed7c607w8oi8"]
+
+[ext_resource type="PackedScene" uid="uid://c858pjqlq4uir" path="res://game/scenes/entities/base_entity.tscn" id="1_ni3d6"]
+[ext_resource type="Script" uid="uid://hohnuvskdkyy" path="res://game/scenes/entities/void_tutorial.gd" id="2_5yfuu"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gwv4b"]
+viewport_path = NodePath("VisualComponent/Viewport3DTo2D")
+
+[node name="TutorialEntity" instance=ExtResource("1_ni3d6")]
+script = ExtResource("2_5yfuu")
+wander_speed = null
+wander_radius = null
+idle_time = null
+size = 60
+
+[node name="Particles2D" parent="VisualComponent" index="0"]
+texture = SubResource("ViewportTexture_gwv4b")

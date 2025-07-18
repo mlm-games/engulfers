@@ -1,14 +1,14 @@
-extends Node2D
+extends BaseLevel
 
 var text1_shown := false
 
 func _ready() -> void:
 	
-	GameFeel.animate_from_offscreen(%Camera2D, Vector2(0, DisplayServer.screen_get_size().y * 3.25), 2.5)
+	super()
 	
 	Player.I.player_input_controller.direction_changed.connect(func(d): 
 		if d != Vector2.ZERO and !text1_shown : 
-			$TutorialLabel.set_text("Nice now capture the body by pressin space (to shoot a void cpature)");
+			$TutorialLabel.set_text("Nice. Now capture the body by pressing space (to shoot a void capture)");
 			UIEffects.typewriter_effect($TutorialLabel)
 			text1_shown = true)
 	
@@ -18,10 +18,13 @@ func _ready() -> void:
 			$TutorialLabel.text = "Good, now move offscreen to end the level")
 	
 	Player.I.visible_on_screen_notifier_2d.screen_exited.connect(func():
-		GameFeel.animate_to_offscreen(%Camera2D, Vector2(0, DisplayServer.screen_get_size().y * 3.25), 2.5)
-	 #TODO Level 1 enter
-	)
+		complete_level()
+		)
 
-
+func complete_level():
+	var cam_t := GameFeel.animate_to_offscreen(%Camera2D, Vector2(0, DisplayServer.screen_get_size().y * 3.25), 2.5)
+	await cam_t.finished
+	super()
+	
 
 	#var editor_icons = Engine.get_singleton(&"EditorInterface").get_editor_theme.get_icon_list(get_icon_)
