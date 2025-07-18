@@ -11,8 +11,6 @@ func _init() -> void:
 var target_pos : Vector2
 var mv_tween : Tween
 
-@export var particle_configuration: ParticleComponentData
-
 func _void_transfer_normal() -> void:
 	pass #Override
 

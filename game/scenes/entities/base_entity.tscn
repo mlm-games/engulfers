@@ -1,16 +1,16 @@
 [gd_scene load_steps=13 format=3 uid="uid://c858pjqlq4uir"]
 
-[ext_resource type="Script" uid="uid://c5yw0hf43uly8" path="res://game/scenes/base_void_entity.gd" id="1_123x1"]
-[ext_resource type="Script" uid="uid://dqssv5ddlmmkv" path="res://game/scripts/velocity_component.gd" id="3_123x1"]
-[ext_resource type="Texture2D" uid="uid://cukxf57ep3k66" path="res://game/resources/void_particle.tres" id="3_bvhp8"]
-[ext_resource type="AnimationLibrary" uid="uid://c5w2n8g7e1bdf" path="res://game/resources/reusable_anims.tres" id="3_d6o6i"]
-[ext_resource type="Shader" uid="uid://bf1q6g6cas62n" path="res://addons/my-ecosystem-template/shaders/flash_white.gdshader" id="3_x0wcv"]
-[ext_resource type="Script" uid="uid://cpmbe08fh6xs1" path="res://game/scenes/components/viewport_3d_to_2d.gd" id="5_bvhp8"]
-[ext_resource type="PackedScene" uid="uid://bl3j3ma1mkw32" path="res://game/scenes/test/void_consume_3d.tscn" id="5_jv7ud"]
-[ext_resource type="PackedScene" uid="uid://cv00hcj82e3vi" path="res://game/scenes/test/void_transfer_3d.tscn" id="6_jv7ud"]
+[ext_resource type="Script" uid="uid://c5yw0hf43uly8" path="res://game/scenes/entities/base_void_entity.gd" id="1_jxxrw"]
+[ext_resource type="PackedScene" uid="uid://bl3j3ma1mkw32" path="res://game/scenes/test/void_consume_3d.tscn" id="2_l176r"]
+[ext_resource type="Shader" uid="uid://bf1q6g6cas62n" path="res://addons/my-ecosystem-template/shaders/flash_white.gdshader" id="3_gbe1d"]
+[ext_resource type="Texture2D" uid="uid://cukxf57ep3k66" path="res://game/resources/void_particle.tres" id="4_c1ajy"]
+[ext_resource type="Script" uid="uid://cpmbe08fh6xs1" path="res://game/scenes/components/viewport_3d_to_2d.gd" id="5_mwwy6"]
+[ext_resource type="PackedScene" uid="uid://cv00hcj82e3vi" path="res://game/scenes/test/void_transfer_3d.tscn" id="6_tfyal"]
+[ext_resource type="Script" uid="uid://dqssv5ddlmmkv" path="res://game/scripts/velocity_component.gd" id="7_mikgi"]
+[ext_resource type="AnimationLibrary" uid="uid://c5w2n8g7e1bdf" path="res://game/resources/reusable_anims.tres" id="8_as0oc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_123x1"]
-shader = ExtResource("3_x0wcv")
+shader = ExtResource("3_gbe1d")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_amount = 0.0
 
@@ -26,10 +26,10 @@ radius = 19.646883
 collision_layer = 2
 collision_mask = 3
 motion_mode = 1
-script = ExtResource("1_123x1")
+script = ExtResource("1_jxxrw")
 metadata/_edit_lock_ = true
 
-[node name="VisualComponent_Sprite3DTo2D_SubViewport#VoidConsume3D" parent="." instance=ExtResource("5_jv7ud")]
+[node name="VisualComponent_Sprite3DTo2D_SubViewport#VoidConsume3D" parent="." instance=ExtResource("2_l176r")]
 unique_name_in_owner = true
 
 [node name="VisualComponent" type="CanvasGroup" parent="."]
@@ -43,25 +43,25 @@ texture = SubResource("ViewportTexture_8t6c5")
 [node name="Sprite2D" type="Sprite2D" parent="VisualComponent"]
 material = SubResource("ShaderMaterial_x0wcv")
 position = Vector2(-3.8146973e-06, 7.6293945e-06)
-texture = ExtResource("3_bvhp8")
+texture = ExtResource("4_c1ajy")
 
 [node name="Viewport3DTo2D" type="SubViewport" parent="VisualComponent"]
 own_world_3d = true
 transparent_bg = true
 gui_disable_input = true
 size = Vector2i(250, 250)
-script = ExtResource("5_bvhp8")
+script = ExtResource("5_mwwy6")
 metadata/_custom_type_script = "uid://cpmbe08fh6xs1"
 
-[node name="VoidConsume3D" parent="VisualComponent/Viewport3DTo2D" instance=ExtResource("5_jv7ud")]
+[node name="VoidConsume3D" parent="VisualComponent/Viewport3DTo2D" instance=ExtResource("2_l176r")]
 unique_name_in_owner = true
 
-[node name="VoidTransfer3D" parent="VisualComponent/Viewport3DTo2D" instance=ExtResource("6_jv7ud")]
+[node name="VoidTransfer3D" parent="VisualComponent/Viewport3DTo2D" instance=ExtResource("6_tfyal")]
 unique_name_in_owner = true
 
 [node name="VelocityComponent" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("3_123x1")
+script = ExtResource("7_mikgi")
 
 [node name="AnimationComponent" type="Node" parent="."]
 unique_name_in_owner = true
@@ -76,5 +76,5 @@ unique_name_in_owner = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-&"": ExtResource("3_d6o6i")
+&"": ExtResource("8_as0oc")
 }

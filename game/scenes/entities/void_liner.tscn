@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://qu1w67qq821n"]
+
+[ext_resource type="PackedScene" uid="uid://c858pjqlq4uir" path="res://game/scenes/entities/base_entity.tscn" id="1_hrenx"]
+[ext_resource type="Script" uid="uid://dfk0uix57lssn" path="res://game/scenes/entities/void_liner.gd" id="2_7aven"]
+[ext_resource type="Material" uid="uid://c3mqsdu6dc6jt" path="res://game/resources/void_particle_base.tres" id="3_vmytg"]
+[ext_resource type="Texture2D" uid="uid://cukxf57ep3k66" path="res://game/resources/void_particle.tres" id="4_vmytg"]
+
+[sub_resource type="GDScript" id="GDScript_h266x"]
+script/source = "#@icon(\"GPUParticles3D\")
+class_name ParticleComponentData extends Resource
+
+@export var process_material : ParticleProcessMaterial
+
+# Basic emission settings
+@export_group(\"Emission\")
+@export var emission_amount: int = 8
+@export var emission_lifetime: float = 2.0
+
+@export var texture: Texture2D
+@export_group(\"Collision\")
+@export var collision_enabled: bool = true
+@export var collision_mode: ParticleProcessMaterial.CollisionMode = ParticleProcessMaterial.COLLISION_RIGID
+@export var collision_friction: float = 0.0
+@export var collision_bounce: float = 0.0
+@export var collision_use_scale: bool = true
+
+# Detection settings (for our custom detection)
+@export_group(\"Detection\")
+@export var detection_radius: float = 8.0
+@export var detection_interval: float = 0.1
+@export var consume_on_hit: bool = true
+@export var detection_area_size: Vector2 = Vector2(100, 400)
+@export var detection_area_offset: Vector2 = Vector2(0, -200)
+
+func apply_to_particles(particles: GPUParticles2D) -> void:
+	particles.amount = emission_amount
+	particles.lifetime = emission_lifetime
+	particles.texture = texture
+	
+	particles.process_material = process_material
+"
+
+[sub_resource type="Resource" id="Resource_7h2wx"]
+script = SubResource("GDScript_h266x")
+process_material = ExtResource("3_vmytg")
+emission_amount = 1
+emission_lifetime = 3.0
+texture = ExtResource("4_vmytg")
+detection_area_size = Vector2(150, 500)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_h266x"]
+viewport_path = NodePath("VisualComponent/Viewport3DTo2D")
+
+[node name="VoidLiner" instance=ExtResource("1_hrenx")]
+script = ExtResource("2_7aven")
+throw_force = 500.0
+speed = 100.0
+wander_radius = 200.0
+idle_time = 2.0
+particle_configuration = SubResource("Resource_7h2wx")
+
+[node name="Particles2D" parent="VisualComponent" index="0"]
+texture = SubResource("ViewportTexture_h266x")
