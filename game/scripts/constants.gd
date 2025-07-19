@@ -51,13 +51,15 @@ const SCENE_PATHS = { #NOTE: To prevent cyclic inheritance error
 	WORLD = "uid://d1dgb8mfo8xtw",
 	SETTINGS = "uid://dp42fom7cc3n0",
 	TUTORIAL_LEVEL = "uid://2vnoaw7gtgkd",
+	END_SCREEN = ""
 }
 
 const Levels : Dictionary[StringName, PackedScene] = {
 	Level0 = preload("uid://2vnoaw7gtgkd"),
 	Level1 = preload("uid://c8p2hg2wy36d3"),
 	Level2 = preload("uid://vcl6nui72ku6"),
-	#Level3 = preload(""),
-	#Level4 = preload(""),
-	#Level5 = preload(""),
+	Level3 = preload("uid://ct8eig6nd0i6c"),
+	Level4 = preload("uid://bylq1pysrncfo"),
+	Level5 = preload("uid://cbe687v1s1nj4"),
+	Level6 = preload("uid://u46m6v14i6dj")
 }

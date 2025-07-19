@@ -1,5 +1,7 @@
 extends Node
 
+var cam_event_running:= false
+
 func _input(event):
 	if OS.get_name() in ["Windows", "macOS", "Linux"] and not OS.has_feature("web"):
 		if event is InputEventKey:
@@ -12,3 +14,11 @@ func _input(event):
 				Engine.time_scale += 1
 			if event.keycode == KEY_MINUS and event.pressed:
 				Engine.time_scale -= 1
+			if event.keycode == KEY_R and event.pressed and !cam_event_running and is_instance_valid(BaseLevel.I):
+				cam_event_running = true
+				var cam_t := GameFeel.animate_to_offscreen(BaseLevel.I.camera_2d, Vector2(0, DisplayServer.screen_get_size().y * -3.25), 1.5)
+				cam_t.tween_callback(func(): 
+					A.tree.reload_current_scene()
+					cam_event_running = false
+					)
+				

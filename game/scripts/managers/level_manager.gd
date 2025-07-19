@@ -39,7 +39,7 @@ func advance_to_next_level():
 func game_completed():
 	print("All levels completed!")
 	current_level_index = -1
-	STransitions.change_scene_with_transition(C.SCENE_PATHS.END_SCREEN_PATH)
+	STransitions.change_scene_with_transition(C.SCENE_PATHS.END_SCREEN)
 
 func start_specific_level(index: int):
 	if index >= 0 and index < level_definitions.size():

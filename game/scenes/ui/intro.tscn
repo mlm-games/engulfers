@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.03379405, 0.033777896, 0.073821716, 1)
+color = Color(0.08235294, 0.09411765, 0.16078432, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Logo" type="TextureRect" parent="."]

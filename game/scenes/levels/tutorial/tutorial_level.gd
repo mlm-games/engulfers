@@ -18,7 +18,7 @@ func _ready() -> void:
 			$TutorialLabel.text = "Good, now move offscreen to end the level")
 	
 	Player.I.visible_on_screen_notifier_2d.screen_exited.connect(func():
-		complete_level()
+		if !CommonGlobals.cam_event_running: complete_level()
 		)
 
 func complete_level():
