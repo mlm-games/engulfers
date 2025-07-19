@@ -46,7 +46,10 @@ func _shoot_at(target: Node2D) -> void:
 
 func _on_missed_shot(body: Node2D) -> void:
 	if body is VoidProjectile and body.emitter != self:
-		attacker = body.emitter
+		if attacker: 
+			attacker = body.emitter #If dead after firirng
+		else:
+			fsm.change_state(_shoot_random_target)
 		# Reset provoked timer (extend if already running)
 		if !provoked_timer.is_stopped(): provoked_timer.stop()
 		provoked_timer.start()

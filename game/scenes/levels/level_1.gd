@@ -1,6 +1,6 @@
 class_name NonTutorialLevel extends BaseLevel
 
-var win_timer : Timer = Timer.new():
+var win_timer : Timer:
 	get: 
 		if is_instance_valid(win_timer): 
 			if !win_timer.is_stopped(): return win_timer
@@ -8,8 +8,8 @@ var win_timer : Timer = Timer.new():
 		
 		var val = Timer.new()
 		val.autostart = false
-		val.start(0.5)
 		add_child(val)
+		val.start(0.5)
 		return val #Its almost the same as Randtimer.new but whatever
 
 func _ready() -> void:

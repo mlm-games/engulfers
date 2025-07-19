@@ -16,15 +16,31 @@ position = Vector2(341, 423)
 
 [node name="VoidKeeper" parent="EntityNode" index="0" instance=ExtResource("3_lg6ek")]
 position = Vector2(813, 344)
+projectile_lifetime = 5.0
+projectile_spawn_time_range = Vector2(0.3, 0.3)
+wander_radius = 100.0
+size = 100
 
 [node name="VoidKeeper2" parent="EntityNode" index="1" instance=ExtResource("3_lg6ek")]
 position = Vector2(712, 433)
+projectile_lifetime = 5.0
+projectile_spawn_time_range = Vector2(0.3, 0.3)
+wander_radius = 100.0
+size = 100
 
 [node name="VoidKeeper3" parent="EntityNode" index="2" instance=ExtResource("3_lg6ek")]
 position = Vector2(808, 427)
+projectile_lifetime = 5.0
+projectile_spawn_time_range = Vector2(0.3, 0.3)
+wander_radius = 100.0
+size = 100
 
 [node name="VoidKeeper4" parent="EntityNode" index="3" instance=ExtResource("3_lg6ek")]
 position = Vector2(817, 244)
+projectile_lifetime = 5.0
+projectile_spawn_time_range = Vector2(0.3, 0.3)
+wander_radius = 100.0
+size = 100
 
 [node name="VoidLiner" parent="EntityNode" index="4" instance=ExtResource("4_1gb37")]
 position = Vector2(538, 245)

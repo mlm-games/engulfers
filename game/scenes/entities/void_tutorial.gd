@@ -31,7 +31,7 @@ func _wander_normal() -> void:
 	if abs(global_position.distance_to(target_pos)) < 10.0: #NOTE #FIXME Adding a timer to proceed if colliding with wwalls DOES NOT WORK... But is it too late?
 		fsm.change_state(_idle_normal)
 	velocity_comp.accelerate_to((target_pos - global_position).normalized(), wander_speed)
-	look_at(-target_pos)
+	look_at(target_pos)
 
 func _wander_enter() -> void:
 	target_pos = global_position + Vector2(randf_range(-wander_radius, wander_radius), randf_range(-wander_radius, wander_radius))
