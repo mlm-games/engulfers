@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dp42fom7cc3n0"]
 
-[ext_resource type="Theme" uid="uid://dxtum7wo4i07p" path="res://game/resources/game_theme.tres" id="1_wuklk"]
+[ext_resource type="Theme" uid="uid://r3vjpsksul05" path="res://game/resources/game_theme_main.tres" id="1_wuklk"]
 [ext_resource type="Script" uid="uid://dcvc700ur1w4b" path="res://addons/basic_settings_menu/settings_menu.gd" id="2_m8nmd"]
 [ext_resource type="PackedScene" uid="uid://bwcsibejua3bb" path="res://addons/basic_settings_menu/setting_confirmation_dialog.tscn" id="3_3fo0h"]
 [ext_resource type="Script" uid="uid://cnfh1rl7a17mv" path="res://addons/my-ecosystem-template/transitions/popup_animator.gd" id="4_k0wj0"]

@@ -1,0 +1,158 @@
+[gd_scene load_steps=14 format=3 uid="uid://b514xdo8luaew"]
+
+[ext_resource type="Script" uid="uid://7b3nu3v2v7nw" path="res://game/scenes/ui/menu.gd" id="1_1fwfn"]
+[ext_resource type="Script" uid="uid://delwv8raptagh" path="res://game/scenes/components/particles_base_3d.gd" id="2_i11ne"]
+[ext_resource type="PackedScene" uid="uid://bl3j3ma1mkw32" path="res://game/scenes/test/void_consume_3d.tscn" id="3_8rr8d"]
+[ext_resource type="Script" uid="uid://blhnhm76y0hhn" path="res://game/scripts/components/rich_text_void.gd" id="4_wg2yx"]
+[ext_resource type="Shader" uid="uid://b5x628apgldxc" path="res://game/void-effect-adapted.gdshader" id="5_0ysjt"]
+[ext_resource type="Script" uid="uid://l370maunxroj" path="res://game/scripts/components/rich_text_void_entity.gd" id="6_f8m5x"]
+[ext_resource type="Script" uid="uid://capjhvihqotjp" path="res://game/scripts/components/rich_text_fx.gd" id="7_3hkna"]
+[ext_resource type="Script" uid="uid://cmo5qw3rubish" path="res://addons/my-ecosystem-template/buttons/anim_button.gd" id="8_2u6lm"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_w3jef"]
+viewport_path = NodePath("Sprite3DTo2D/SubViewport")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_h2f6c"]
+script = ExtResource("4_wg2yx")
+metadata/_custom_type_script = "uid://blhnhm76y0hhn"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q71cj"]
+shader = ExtResource("5_0ysjt")
+shader_parameter/wave_amplitude = -0.1300000000046566
+shader_parameter/wave_frequency = 1.4499999999970896
+shader_parameter/wave_speed = 2.0
+shader_parameter/distortion_amount = 0.0010000000038417056
+shader_parameter/water_tint = Color(0.07058822, 0.13725491, 0.18431373, 1)
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_qitgv"]
+script = ExtResource("6_f8m5x")
+metadata/_custom_type_script = "uid://l370maunxroj"
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_fmw4l"]
+script = ExtResource("7_3hkna")
+metadata/_custom_type_script = "uid://capjhvihqotjp"
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1fwfn")
+
+[node name="TextureRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+color = Color(0.03379405, 0.033777896, 0.073821716, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite3DTo2D" type="Sprite2D" parent="."]
+position = Vector2(582.5, 316)
+scale = Vector2(2.2910156, 1.2304686)
+texture = SubResource("ViewportTexture_w3jef")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3DTo2D"]
+transparent_bg = true
+gui_disable_input = true
+
+[node name="Camera3D" type="Camera3D" parent="Sprite3DTo2D/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.727793)
+fov = 165.5
+
+[node name="ParticlesBase3D" type="Node3D" parent="Sprite3DTo2D/SubViewport"]
+unique_name_in_owner = true
+script = ExtResource("2_i11ne")
+
+[node name="GPUParticlesNode" type="Node3D" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D"]
+unique_name_in_owner = true
+
+[node name="Explosion3D" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode" instance=ExtResource("3_8rr8d")]
+
+[node name="Debris" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D/GPUParticlesNode" index="0"]
+emitting = true
+one_shot = false
+explosiveness = 0.05
+
+[node name="Camera3D" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D" index="1"]
+fov = 8.2
+
+[node name="GameLogo" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -411.0
+offset_right = 540.0
+offset_bottom = 411.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.64720196, 0.64720196)
+pivot_offset = Vector2(540, 411)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -373.5
+offset_right = 373.5
+offset_bottom = 209.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[font_size=50px][void]You caught em all! 
+(ahem, I meant consumed...)"
+horizontal_alignment = 1
+vertical_alignment = 1
+custom_effects = [SubResource("RichTextEffect_h2f6c")]
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_q71cj")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -373.5
+offset_right = 373.5
+offset_bottom = 209.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "you win"
+horizontal_alignment = 1
+vertical_alignment = 1
+custom_effects = [SubResource("RichTextEffect_h2f6c"), SubResource("RichTextEffect_qitgv"), SubResource("RichTextEffect_fmw4l")]
+
+[node name="PlayButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = 128.25
+offset_right = 240.0
+offset_bottom = 175.75
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(240, 23.75)
+text = "Restart?"
+script = ExtResource("8_2u6lm")
+metadata/_custom_type_script = "uid://cmo5qw3rubish"
+
+[editable path="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D"]
