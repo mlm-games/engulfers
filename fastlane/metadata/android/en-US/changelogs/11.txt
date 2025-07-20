@@ -1,0 +1,19 @@
+- add credits, end game timer by @mlm-games
+- add the icon and halt by @mlm-games
+- fix pause menu, other changes (made during check for player death not working) by @mlm-games
+- add more particles by @mlm-games
+- add the font and try to  expand on the font (while breaking fonts...) by @mlm-games
+- add a small theme by @mlm-games
+- added few more levels, added an asset pack by @mlm-games
+- improve enemy movement by @mlm-games
+- add level2 and better? transition by @mlm-games
+- forgot these, added better terrain addon by @mlm-games
+- 2 playables levels done by @mlm-games
+- rem unused files by @mlm-games
+- save (completed tutorial for now) by @mlm-games
+- save before the spaghetti by @mlm-games
+- later changes by @mlm-games
+- initial changes (old, uncommited) by @mlm-games
+- rm img file by @mlm-games
+- Replace placeholders by @mlm-games
+- Initial commit by @ragebreaker
