@@ -1,10 +1,11 @@
 class_name BaseLevel extends Node2D
 
-static var I : BaseLevel
+static var I : BaseLevel #Current instance on screen
 
 func _init() -> void:
 	I = self
 
+@onready var retry_label: RichTextLabel = %RetryLabel
 @onready var level_id = name.to_upper() 
 @onready var camera_2d: Camera2D = %Camera2D
 

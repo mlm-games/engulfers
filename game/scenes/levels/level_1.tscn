@@ -9,12 +9,28 @@ script = ExtResource("2_1k2pe")
 
 [node name="VoidKeeper" parent="EntityNode" index="0" instance=ExtResource("2_5gvcb")]
 position = Vector2(704, 325)
+projectile_lifetime = 5.0
+projectile_spawn_time_range = Vector2(0.3, 0.3)
+wander_radius = 100.0
+size = 100
 
 [node name="VoidKeeper2" parent="EntityNode" index="1" instance=ExtResource("2_5gvcb")]
 position = Vector2(722, 179)
+projectile_lifetime = 5.0
+projectile_spawn_time_range = Vector2(0.3, 0.3)
+wander_radius = 100.0
+size = 100
 
 [node name="VoidKeeper3" parent="EntityNode" index="2" instance=ExtResource("2_5gvcb")]
 position = Vector2(689, 438)
+projectile_lifetime = 5.0
+projectile_spawn_time_range = Vector2(0.3, 0.3)
+wander_radius = 100.0
+size = 100
 
 [node name="VoidKeeper4" parent="EntityNode" index="3" instance=ExtResource("2_5gvcb")]
 position = Vector2(486, 175)
+projectile_lifetime = 5.0
+projectile_spawn_time_range = Vector2(0.3, 0.3)
+wander_radius = 100.0
+size = 100

@@ -16,7 +16,7 @@ func _ready() -> void:
 	
 	super()
 	
-	Player.I.fsm.state_changed.connect(func(s): 
+	Player.I.fsm.state_changed.connect(func(_s,s): 
 		if s == Player.I._void_transfer_normal:
 			await win_timer.timeout #NOTE: Runs when doing anything related to player
 			if %EntityNode.get_children().is_empty():

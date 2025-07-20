@@ -12,7 +12,7 @@ func _ready() -> void:
 			UIEffects.typewriter_effect($TutorialLabel)
 			text1_shown = true)
 	
-	Player.I.fsm.state_changed.connect(func(s): 
+	Player.I.fsm.state_changed.connect(func(_s, s): 
 		if s == Player.I._void_transfer_normal:
 			UIEffects.typewriter_effect($TutorialLabel)
 			$TutorialLabel.text = "Good, now move offscreen to end the level")

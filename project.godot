@@ -20,7 +20,7 @@ config/description="It consumes entities? or It is a symbiote? Mostly wanted to 
 run/main_scene="uid://bmmltlbfwh0bh"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0.0924416, 0.147392, 0.187741, 1)
-config/icon="res://icon.svg"
+config/icon="uid://c01iac6jh763q"
 
 [autoload]
 
