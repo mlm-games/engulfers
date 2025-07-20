@@ -23,7 +23,7 @@ func start_game():
 	current_level_index = 0
 	
 	_start_level(C.Levels.Level0, true)
-	
+	A.start_game_timer()
 
 ## Called from the level scene when the player completes a level.
 func advance_to_next_level():

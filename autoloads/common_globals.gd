@@ -10,10 +10,7 @@ func _input(event):
 					DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 				elif DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
 					DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-			if event.keycode == KEY_EQUAL and event.pressed: #KEY_PLUS doesnt work for some reason
-				Engine.time_scale += 1
-			if event.keycode == KEY_MINUS and event.pressed:
-				Engine.time_scale -= 1
+			
 			if event.keycode == KEY_R and event.pressed and !cam_event_running and is_instance_valid(BaseLevel.I):
 				cam_event_running = true
 				var cam_t := GameFeel.animate_to_offscreen(BaseLevel.I.camera_2d, Vector2(0, DisplayServer.screen_get_size().y * -3.25), 1.5)
@@ -22,3 +19,8 @@ func _input(event):
 					cam_event_running = false
 					)
 				
+			if OS.is_debug_build():
+				if event.keycode == KEY_EQUAL and event.pressed: #KEY_PLUS doesnt work for some reason
+					Engine.time_scale += 1
+				if event.keycode == KEY_MINUS and event.pressed:
+					Engine.time_scale -= 1

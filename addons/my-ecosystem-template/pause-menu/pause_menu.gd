@@ -34,6 +34,7 @@ func unpause() -> void:
 	page_animator.animate_out(Callable(self, "_on_unpause_animation_finished"))
 
 func _on_unpause_animation_finished() -> void:
+	hide()
 	get_tree().paused = false
 	
 func _on_resume_button_pressed() -> void:
@@ -51,3 +52,4 @@ func _on_settings_button_pressed() -> void:
 func _on_quit_button_pressed() -> void:
 	hide()
 	get_tree().paused = false
+	STransitions.change_scene_with_transition("uid://cgcvpk7q28k7p")

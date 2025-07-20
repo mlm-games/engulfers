@@ -15,7 +15,7 @@ func _ready() -> void:
 	Player.I.fsm.state_changed.connect(func(_s, s): 
 		if s == Player.I._void_transfer_normal:
 			UIEffects.typewriter_effect($TutorialLabel)
-			$TutorialLabel.text = "Good, now move offscreen to end the level")
+			$TutorialLabel.text = "Good, now move offscreen to end the level!")
 	
 	Player.I.visible_on_screen_notifier_2d.screen_exited.connect(func():
 		if !CommonGlobals.cam_event_running: complete_level()

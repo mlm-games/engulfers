@@ -7,7 +7,7 @@ var enabled := true
 
 func _physics_process(_delta: float) -> void:
 	if enabled:
-		var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		var direction := Input.get_vector("left", "right", "up", "down")
 		
 		direction_changed.emit(direction)
 
