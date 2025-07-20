@@ -1,7 +1,7 @@
 # By firebelley's github gist (slightly modified)
 class_name CallableStateMachine
 
-signal state_changed(state: Callable)
+signal state_changed(current_state: Callable, state: Callable)
 
 var state_dictionary : Dictionary[Callable, Dictionary] = {}
 var current_state: Callable
@@ -33,7 +33,7 @@ func update():
 			push_warning("Nonexistent normal callable for state: ", current_state)
 
 func change_state(state: Callable):
-	state_changed.emit(state)
+	state_changed.emit(current_state, state)
 	if state_dictionary.has(state):
 		_set_state.call_deferred(state)
 	else:
@@ -42,11 +42,11 @@ func change_state(state: Callable):
 func _set_state(state: Callable):
 	if current_state and state_dictionary.has(current_state):
 		var leave : Callable = state_dictionary[current_state].leave
-		@warning_ignore("standalone_ternary")
-		await leave.call() if leave.is_valid() else printerr("Leave callable is not valid.")
+		if leave.is_valid():
+			await leave.call() #else printerr("Leave callable is not valid.")
 	
 	current_state = state
 	
 	var enter = state_dictionary[current_state].enter
-	@warning_ignore("standalone_ternary")
-	await enter.call() if enter.is_valid() else printerr("Enter callable is not valid.")
+	if enter.is_valid():
+		await enter.call() #else printerr("Enter callable is not valid.")

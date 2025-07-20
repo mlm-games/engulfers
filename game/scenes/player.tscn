@@ -9,6 +9,7 @@ viewport_path = NodePath("VisualComponent/Viewport3DTo2D")
 
 [node name="Player" instance=ExtResource("1_0gakw")]
 collision_layer = 10
+collision_mask = 11
 script = ExtResource("2_u5gyh")
 size = 150
 

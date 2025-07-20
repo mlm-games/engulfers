@@ -9,8 +9,6 @@ func _init() -> void:
 	fsm.add_states(possess)
 	fsm.add_states(player_controlled)
 
-#TODO: MAke
-
 #var owned_body : BaseVoidEntity = null
 var stamina : float = 100
 

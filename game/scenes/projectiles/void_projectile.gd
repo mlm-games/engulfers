@@ -11,7 +11,7 @@ var queued_free:= false
 @export var speed := 400
 
 func _ready() -> void:
-		
+	
 	#set_collision_mask_value(collision_shape_mask, true)
 	
 	$LifespanTimer.timeout.connect(animate_free)

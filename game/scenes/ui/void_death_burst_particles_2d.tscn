@@ -31,6 +31,7 @@ point_count = 2
 [node name="BurstParticles2D" type="Node2D"]
 script = ExtResource("1_novx3")
 num_particles = 30
+lifetime = 0.6150000000052387
 image_scale = 0.5650000000023283
 gradient = SubResource("GradientTexture1D_gn0ff")
 share_material = true

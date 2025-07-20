@@ -5,6 +5,7 @@ class_name BaseVoidEntity extends BaseEntity
 func _init() -> void:
 	super()
 	fsm.add_states(_void_transfer_normal, _void_transfer_enter, _void_transfer_exit)
+	fsm.state_changed.connect(printt)
 
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 
