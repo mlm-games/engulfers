@@ -11,7 +11,7 @@ func _input(event):
 				elif DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
 					DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			
-			if event.keycode == KEY_R and event.pressed and !cam_event_running and is_instance_valid(BaseLevel.I):
+			if event.is_action_pressed("restart") and event.pressed and !cam_event_running and is_instance_valid(BaseLevel.I):
 				cam_event_running = true
 				var cam_t := GameFeel.animate_to_offscreen(BaseLevel.I.camera_2d, Vector2(0, DisplayServer.screen_get_size().y * -3.25), 1.5)
 				cam_t.tween_callback(func(): 
