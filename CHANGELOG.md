@@ -1,3 +1,8 @@
+## v0.1.6
+
+- try adding another check for restart, since the prev one didnt work by @mlm-games
+
+
 ## v0.1.5
 
 - try fixing restart on web by @mlm-games

@@ -1,0 +1,1 @@
+- try adding another check for restart, since the prev one didnt work by @mlm-games
