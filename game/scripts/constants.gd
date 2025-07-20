@@ -51,7 +51,7 @@ const SCENE_PATHS = { #NOTE: To prevent cyclic inheritance error
 	WORLD = "uid://d1dgb8mfo8xtw",
 	SETTINGS = "uid://dp42fom7cc3n0",
 	TUTORIAL_LEVEL = "uid://2vnoaw7gtgkd",
-	END_SCREEN = ""
+	END_SCREEN = "uid://b514xdo8luaew"
 }
 
 const Levels : Dictionary[StringName, PackedScene] = {
@@ -63,3 +63,6 @@ const Levels : Dictionary[StringName, PackedScene] = {
 	Level5 = preload("uid://cbe687v1s1nj4"),
 	Level6 = preload("uid://u46m6v14i6dj")
 }
+
+
+const burst_particles = preload("res://game/scenes/ui/void_death_burst_particles_2d.tscn")

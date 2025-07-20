@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=31 format=3 uid="uid://r3vjpsksul05"]
+[gd_resource type="Theme" load_steps=29 format=3 uid="uid://r3vjpsksul05"]
 
 [ext_resource type="FontFile" uid="uid://dvs4ao3ljpxir" path="res://assets/font/JetBrainsMono-2.304/fonts/ttf/JetBrainsMono-Bold.ttf" id="1_3bsvp"]
 [ext_resource type="FontFile" uid="uid://cw556aba4pby5" path="res://assets/font/Orbitron/Orbitron/static/Orbitron-Bold.ttf" id="2_71c8e"]
@@ -215,17 +215,6 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_label_panel"]
-content_margin_left = 6.0
-content_margin_top = 3.0
-content_margin_right = 6.0
-content_margin_bottom = 3.0
-bg_color = Color(0.12549, 0.117647, 0.188235, 0.3)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lineedit_focus"]
 content_margin_left = 4.0
 content_margin_top = 2.0
@@ -318,18 +307,6 @@ corner_radius_bottom_left = 4
 shadow_color = Color(0, 0, 0, 0.5)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_focus"]
-draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 1, 0.752941, 0.8)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab_selected"]
 content_margin_left = 8.0
 content_margin_top = 4.0
@@ -420,13 +397,6 @@ ItemList/styles/bg = SubResource("StyleBoxFlat_tree_bg")
 ItemList/styles/bg_focus = SubResource("StyleBoxFlat_tree_bg")
 ItemList/styles/selected = SubResource("StyleBoxFlat_tree_selected")
 ItemList/styles/selected_focus = SubResource("StyleBoxFlat_tree_selected")
-Label/colors/font_color = Color(0.878431, 0.878431, 0.878431, 1)
-Label/colors/font_shadow_color = Color(0, 0, 0, 0.4)
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/font_sizes/font_size = 16
-Label/fonts/font = ExtResource("1_3bsvp")
-Label/styles/normal = SubResource("StyleBoxFlat_label_panel")
 LineEdit/colors/caret_color = Color(0, 1, 0.752941, 1)
 LineEdit/colors/font_color = Color(0.878431, 0.878431, 0.878431, 1)
 LineEdit/colors/font_selected_color = Color(0.0627451, 0.0588235, 0.0941176, 1)
@@ -446,8 +416,6 @@ PopupMenu/styles/hover = SubResource("StyleBoxFlat_menu_hover")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_popup_menu")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_progress_bg")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_progress_fill")
-RichTextLabel/styles/focus = SubResource("StyleBoxFlat_focus")
-RichTextLabel/styles/normal = SubResource("StyleBoxFlat_panel_rounded")
 TabBar/styles/tab_disabled = SubResource("StyleBoxFlat_button_disabled")
 TabBar/styles/tab_selected = SubResource("StyleBoxFlat_tab_selected")
 TabBar/styles/tab_unselected = SubResource("StyleBoxFlat_tab_unselected")

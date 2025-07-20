@@ -119,6 +119,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 custom_effects = [SubResource("RichTextEffect_h2f6c")]
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -373.5
+offset_right = 373.5
+offset_bottom = 209.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[void][font_size=50px]ENGULFERS"
+horizontal_alignment = 1
+vertical_alignment = 1
+custom_effects = [SubResource("RichTextEffect_h2f6c")]
+
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
 material = SubResource("ShaderMaterial_q71cj")
 layout_mode = 1

@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5a23y5m7ieil"]
+
+[ext_resource type="Script" uid="uid://uubvb8d17dhh" path="res://addons/BurstParticles2D/BurstParticles2D.gd" id="1_novx3"]
+
+[sub_resource type="Gradient" id="Gradient_hc40k"]
+colors = PackedColorArray(0.3854925, 0.38549247, 0.38549247, 1, 1, 1, 0.4627451, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gn0ff"]
+gradient = SubResource("Gradient_hc40k")
+
+[sub_resource type="Curve" id="Curve_vn4ji"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.47826087, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_xsqjc"]
+_data = [Vector2(0.032608703, 1), 0.0, 0.0, 0, 0, Vector2(0.3152174, 0), 0.0, 0.0, 0, 0, Vector2(0.7228261, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_0qxhk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.30978262, 0), 0.0, 0.0, 0, 0, Vector2(0.71195656, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_qyp4s"]
+_data = [Vector2(0.02173914, 0), 0.0, 0.0, 0, 0, Vector2(0.48913044, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_t8y7v"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="BurstParticles2D" type="Node2D"]
+script = ExtResource("1_novx3")
+num_particles = 30
+image_scale = 0.5650000000023283
+gradient = SubResource("GradientTexture1D_gn0ff")
+share_material = true
+distance_curve = SubResource("Curve_vn4ji")
+rotation_curve = SubResource("Curve_xsqjc")
+scale_curve = SubResource("Curve_0qxhk")
+color_offset_curve = SubResource("Curve_qyp4s")
+alpha_curve = SubResource("Curve_t8y7v")
+metadata/_custom_type_script = "uid://uubvb8d17dhh"

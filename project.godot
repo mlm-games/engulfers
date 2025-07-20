@@ -38,11 +38,12 @@ BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
 
 [display]
 
+window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://mnaeaqdnb3h"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/basic_settings_menu/plugin.cfg", "res://addons/better-terrain/plugin.cfg", "res://addons/layer_names/plugin.cfg")
+enabled=PackedStringArray("res://addons/BurstParticles2D/plugin.cfg", "res://addons/basic_settings_menu/plugin.cfg", "res://addons/better-terrain/plugin.cfg", "res://addons/layer_names/plugin.cfg")
 
 [global_group]
 

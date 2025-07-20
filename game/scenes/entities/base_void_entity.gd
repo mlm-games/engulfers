@@ -26,6 +26,10 @@ func _void_transfer_exit() -> void:
 
 func animate_free(anim_time:= 0.2):
 	%VoidConsume3D.emit_oneshot_particles()
+	var burst : BurstParticles2D = C.burst_particles.instantiate()
+	burst.global_position = global_position
+	burst.z_index = 50
+	A.add_child(burst)
 	disable_collision()
 	
 	consume_tween = create_tween().set_trans(Tween.TRANS_CUBIC)
