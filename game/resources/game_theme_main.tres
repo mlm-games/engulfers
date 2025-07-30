@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=29 format=3 uid="uid://r3vjpsksul05"]
+[gd_resource type="Theme" load_steps=38 format=3 uid="uid://r3vjpsksul05"]
 
 [ext_resource type="FontFile" uid="uid://dvs4ao3ljpxir" path="res://assets/font/JetBrainsMono-2.304/fonts/ttf/JetBrainsMono-Bold.ttf" id="1_3bsvp"]
 [ext_resource type="FontFile" uid="uid://cw556aba4pby5" path="res://assets/font/Orbitron/Orbitron/static/Orbitron-Bold.ttf" id="2_71c8e"]
@@ -77,6 +77,8 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_transparent"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_checkbox_unchecked"]
 bg_color = Color(0.0627451, 0.0588235, 0.0941176, 1)
 border_width_left = 1
@@ -88,6 +90,18 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_codeedit_completion"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.02, 0.01, 0.03, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_graph_node"]
 bg_color = Color(0.0627451, 0.0588235, 0.0941176, 0.9)
@@ -136,6 +150,13 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0, 1, 0.752941, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scrollbar_bg"]
+bg_color = Color(0.02, 0.01, 0.03, 0.6)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -307,6 +328,34 @@ corner_radius_bottom_left = 4
 shadow_color = Color(0, 0, 0, 0.5)
 shadow_size = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_separator"]
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.12549, 0.117647, 0.188235, 0.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rich_text_focus"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 1, 0.752941, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab_hover"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.12549, 0.117647, 0.188235, 0.8)
+border_width_bottom = 2
+border_color = Color(0, 1, 0.752941, 0.5)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab_selected"]
 content_margin_left = 8.0
 content_margin_top = 4.0
@@ -329,6 +378,26 @@ border_color = Color(0.12549, 0.117647, 0.188235, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab_focus"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 1, 0.752941, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_textedit_bg"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -340,6 +409,22 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.12549, 0.117647, 0.188235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tooltip"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.02, 0.01, 0.03, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 1, 0.752941, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -361,6 +446,20 @@ corner_radius_bottom_left = 4
 shadow_color = Color(0, 0, 0, 0.4)
 shadow_size = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_window_unfocused"]
+content_margin_top = 32.0
+content_margin_bottom = 8.0
+bg_color = Color(0.04, 0.03, 0.05, 0.8)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.12549, 0.117647, 0.188235, 0.6)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [resource]
 default_font = ExtResource("1_3bsvp")
 default_font_size = 16
@@ -381,13 +480,58 @@ CheckBox/colors/font_hover_color = Color(1, 1, 1, 1)
 CheckBox/colors/font_pressed_color = Color(0, 1, 0.752941, 1)
 CheckBox/styles/checked = SubResource("StyleBoxFlat_checkbox_checked")
 CheckBox/styles/checked_disabled = SubResource("StyleBoxFlat_button_disabled")
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_transparent")
 CheckBox/styles/unchecked = SubResource("StyleBoxFlat_checkbox_unchecked")
 CheckBox/styles/unchecked_disabled = SubResource("StyleBoxFlat_button_disabled")
+CodeEdit/colors/background_color = Color(0.02, 0.01, 0.03, 0.98)
+CodeEdit/colors/bookmark_color = Color(1, 0.753, 0.4, 1)
+CodeEdit/colors/brace_mismatch_color = Color(1, 0.333, 0.467, 1)
+CodeEdit/colors/breakpoint_color = Color(1, 0.333, 0.467, 1)
+CodeEdit/colors/caret_background_color = Color(0, 1, 0.752941, 0.3)
+CodeEdit/colors/caret_color = Color(0, 1, 0.752941, 1)
+CodeEdit/colors/code_folding_color = Color(0.7, 0.6, 0.8, 0.5)
+CodeEdit/colors/comment_color = Color(0.7, 0.7, 0.8, 0.8)
+CodeEdit/colors/completion_background_color = Color(0.04, 0.03, 0.05, 0.98)
+CodeEdit/colors/completion_existing_color = Color(0.8, 0.7, 0.9, 0.3)
+CodeEdit/colors/completion_font_color = Color(0.98, 0.973, 0.937, 1)
+CodeEdit/colors/completion_scroll_color = Color(0, 1, 0.752941, 0.4)
+CodeEdit/colors/completion_selected_color = Color(0, 1, 0.752941, 0.3)
+CodeEdit/colors/control_flow_keyword_color = Color(1, 0.478, 0.776, 1)
+CodeEdit/colors/current_line_color = Color(0, 1, 0.752941, 0.15)
+CodeEdit/colors/doc_comment_color = Color(0.6, 0.8, 0.9, 0.9)
+CodeEdit/colors/engine_type_color = Color(0.4, 0.886, 1, 1)
+CodeEdit/colors/executing_line_color = Color(0.4, 0.933, 0.627, 0.3)
+CodeEdit/colors/font_color = Color(0.98, 0.973, 0.937, 1)
+CodeEdit/colors/font_placeholder_color = Color(0.7, 0.6, 0.8, 0.6)
+CodeEdit/colors/font_readonly_color = Color(0.9, 0.88, 0.85, 0.9)
+CodeEdit/colors/font_selected_color = Color(1, 1, 1, 1)
+CodeEdit/colors/function_color = Color(1, 0.753, 0.4, 1)
+CodeEdit/colors/gdscript_global_function_color = Color(0.4, 0.886, 1, 1)
+CodeEdit/colors/keyword_color = Color(1, 0.478, 0.776, 1)
+CodeEdit/colors/line_length_guideline_color = Color(0, 1, 0.752941, 0.3)
+CodeEdit/colors/line_number_color = Color(0.7, 0.6, 0.8, 0.7)
+CodeEdit/colors/member_variable_color = Color(0.6, 0.847, 1, 1)
+CodeEdit/colors/number_color = Color(0.4, 0.933, 0.627, 1)
+CodeEdit/colors/search_result_border_color = Color(0, 1, 0.752941, 1)
+CodeEdit/colors/search_result_color = Color(0, 1, 0.752941, 0.3)
+CodeEdit/colors/selection_color = Color(0, 1, 0.752941, 0.4)
+CodeEdit/colors/string_color = Color(1, 0.631, 0.278, 1)
+CodeEdit/colors/symbol_color = Color(0.9, 0.9, 0.9, 0.9)
+CodeEdit/colors/type_color = Color(0.4, 0.886, 1, 1)
+CodeEdit/colors/user_type_color = Color(0.6, 0.847, 1, 1)
+CodeEdit/colors/word_highlighted_color = Color(0, 1, 0.752941, 0.3)
+CodeEdit/constants/completion_lines = 7
+CodeEdit/constants/completion_max_width = 400
+CodeEdit/constants/completion_scroll_width = 8
+CodeEdit/constants/line_spacing = 6
+CodeEdit/font_sizes/font_size = 18
+CodeEdit/styles/completion = SubResource("StyleBoxFlat_codeedit_completion")
 GraphNode/styles/frame = SubResource("StyleBoxFlat_graph_node")
 GraphNode/styles/selected_frame = SubResource("StyleBoxFlat_graph_node_selected")
 HScrollBar/styles/grabber = SubResource("StyleBoxFlat_scrollbar_grabber")
 HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_scrollbar_grabber_highlight")
 HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_scrollbar_grabber_highlight")
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_scrollbar_bg")
 HSlider/styles/grabber = SubResource("StyleBoxFlat_grabber")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_progress_fill")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_progress_fill")
@@ -397,6 +541,10 @@ ItemList/styles/bg = SubResource("StyleBoxFlat_tree_bg")
 ItemList/styles/bg_focus = SubResource("StyleBoxFlat_tree_bg")
 ItemList/styles/selected = SubResource("StyleBoxFlat_tree_selected")
 ItemList/styles/selected_focus = SubResource("StyleBoxFlat_tree_selected")
+Label/colors/font_color = Color(0.878431, 0.878431, 0.878431, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.4)
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
 LineEdit/colors/caret_color = Color(0, 1, 0.752941, 1)
 LineEdit/colors/font_color = Color(0.878431, 0.878431, 0.878431, 1)
 LineEdit/colors/font_selected_color = Color(0.0627451, 0.0588235, 0.0941176, 1)
@@ -405,6 +553,10 @@ LineEdit/colors/selection_color = Color(0, 1, 0.752941, 0.4)
 LineEdit/styles/focus = SubResource("StyleBoxFlat_lineedit_focus")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_lineedit_normal")
 LineEdit/styles/read_only = SubResource("StyleBoxFlat_lineedit_normal")
+MarginContainer/constants/margin_bottom = 8
+MarginContainer/constants/margin_left = 8
+MarginContainer/constants/margin_right = 8
+MarginContainer/constants/margin_top = 8
 OptionButton/styles/disabled = SubResource("StyleBoxFlat_button_disabled")
 OptionButton/styles/focus = SubResource("StyleBoxFlat_button_focus_hover")
 OptionButton/styles/hover = SubResource("StyleBoxFlat_button_focus_hover")
@@ -412,20 +564,40 @@ OptionButton/styles/normal = SubResource("StyleBoxFlat_option_button")
 OptionButton/styles/pressed = SubResource("StyleBoxFlat_button_pressed")
 Panel/styles/panel = SubResource("StyleBoxFlat_panel_rounded")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_panel_rounded")
+PopupMenu/colors/font_separator_color = Color(0.5, 0.5, 0.5, 0.5)
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_menu_hover")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_popup_menu")
+PopupMenu/styles/separator = SubResource("StyleBoxFlat_separator")
+PopupPanel/styles/panel = SubResource("StyleBoxFlat_popup_menu")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_progress_bg")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_progress_fill")
+RichTextLabel/colors/font_color = Color(0.878431, 0.878431, 0.878431, 1)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.3)
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/styles/focus = SubResource("StyleBoxFlat_rich_text_focus")
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_transparent")
+SpinBox/styles/field_focus = SubResource("StyleBoxFlat_lineedit_focus")
+TabBar/colors/font_unselected_color = Color(0.7, 0.7, 0.7, 1)
 TabBar/styles/tab_disabled = SubResource("StyleBoxFlat_button_disabled")
+TabBar/styles/tab_hover = SubResource("StyleBoxFlat_tab_hover")
 TabBar/styles/tab_selected = SubResource("StyleBoxFlat_tab_selected")
 TabBar/styles/tab_unselected = SubResource("StyleBoxFlat_tab_unselected")
 TabContainer/styles/panel = SubResource("StyleBoxFlat_panel_rounded")
 TabContainer/styles/tab_disabled = SubResource("StyleBoxFlat_button_disabled")
+TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_tab_focus")
+TabContainer/styles/tab_hover = SubResource("StyleBoxFlat_tab_hover")
 TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_tab_selected")
 TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_tab_unselected")
+TextEdit/colors/caret_color = Color(0, 1, 0.752941, 1)
+TextEdit/colors/font_color = Color(0.878431, 0.878431, 0.878431, 1)
+TextEdit/colors/selection_color = Color(0, 1, 0.752941, 0.4)
+TextEdit/font_sizes/font_size = 18
 TextEdit/styles/focus = SubResource("StyleBoxFlat_lineedit_focus")
 TextEdit/styles/normal = SubResource("StyleBoxFlat_textedit_bg")
 TextEdit/styles/read_only = SubResource("StyleBoxFlat_textedit_bg")
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_tooltip")
+Tree/colors/font_selected_color = Color(1, 1, 1, 1)
 Tree/styles/bg = SubResource("StyleBoxFlat_tree_bg")
 Tree/styles/bg_focus = SubResource("StyleBoxFlat_tree_bg")
 Tree/styles/button_pressed = SubResource("StyleBoxFlat_button_pressed")
@@ -437,6 +609,8 @@ Tree/styles/title_button_pressed = SubResource("StyleBoxFlat_button_pressed")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_scrollbar_grabber")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_scrollbar_grabber_highlight")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_scrollbar_grabber_highlight")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_scrollbar_bg")
+VSeparator/styles/separator = SubResource("StyleBoxFlat_separator")
 VSlider/styles/grabber = SubResource("StyleBoxFlat_grabber")
 VSlider/styles/grabber_area = SubResource("StyleBoxFlat_progress_fill")
 VSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_progress_fill")
@@ -448,4 +622,6 @@ Window/constants/title_height = 40
 Window/constants/title_outline_size = 1
 Window/font_sizes/title_font_size = 20
 Window/fonts/title_font = ExtResource("2_71c8e")
+Window/styles/embedded_border = SubResource("StyleBoxFlat_window")
+Window/styles/embedded_unfocused_border = SubResource("StyleBoxFlat_window_unfocused")
 Window/styles/panel = SubResource("StyleBoxFlat_window")

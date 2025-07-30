@@ -36,6 +36,10 @@ BgMusicPlayer="*res://addons/my-ecosystem-template/autoloads/bg_music_player.tsc
 A="*res://game/scripts/autoload.tscn"
 BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
 
+[default_resource_importers]
+
+svg="svg"
+
 [display]
 
 window/stretch/mode="canvas_items"

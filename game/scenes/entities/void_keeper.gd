@@ -23,7 +23,7 @@ func _wander_leave() -> void:
 	projectile_timer.stop()
 
 func _spawn_projectile() -> void:
-	Util.spawn_at_pos(self, C.Projectiles.VoidKeeperProjectile)
+	Util.spawn_projectile(self, C.Projectiles.VoidKeeperProjectile)
 	
 
 #Cut for scope creep, can add later

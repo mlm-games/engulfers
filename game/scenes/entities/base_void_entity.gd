@@ -13,16 +13,14 @@ var target_pos : Vector2
 var mv_tween : Tween
 
 func _void_transfer_normal() -> void:
-	pass #Override
+	pass #Override, set state machine.lock()
 
 func _void_transfer_enter() -> void:
 	ScreenEffects.flash_white(visual_component, 1)
 	animate_to_pos()
 	disable_collision()
 
-func _void_transfer_exit() -> void:
-	if mv_tween.is_running():
-		await mv_tween.finished
+func _void_transfer_exit() -> void: #unlock
 	disable_collision(false)
 
 func animate_free(anim_time:= 0.2):
@@ -38,12 +36,13 @@ func animate_free(anim_time:= 0.2):
 	consume_tween.parallel().tween_property(self, "rotation", 0, anim_time)
 	consume_tween.tween_callback(queue_free)
 
-func animate_to_pos() -> void:
+func animate_to_pos() -> Tween:
 	%VoidTransfer3D.emit_oneshot_particles()
 	mv_tween = create_tween().set_trans(Tween.TRANS_CUBIC)
 	mv_tween.tween_property(visual_component, "scale", Vector2.ONE * 0.27, 0.2)
 	mv_tween.tween_property(self, "global_position", target_pos, 0.3)
 	mv_tween.tween_property(visual_component, "scale", Vector2.ONE, 0.2)
+	return mv_tween
 
 func on_void_body_hit(body: BaseVoidEntity) -> void:
 	##If your collision mask is right, then you wouldn't need the "is body" condn

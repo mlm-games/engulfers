@@ -19,8 +19,3 @@ func _input(event):
 					#cam_event_running = false
 					#)
 				
-			if OS.is_debug_build():
-				if event.keycode == KEY_EQUAL and event.pressed: #KEY_PLUS doesnt work for some reason
-					Engine.time_scale += 1
-				if event.keycode == KEY_MINUS and event.pressed:
-					Engine.time_scale -= 1

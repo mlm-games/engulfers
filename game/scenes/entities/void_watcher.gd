@@ -35,5 +35,5 @@ func _attack_normal() -> void:
 
 func _shoot_if_in_sight() -> void:
 	if fsm.current_state == _attack_normal:
-		var proj = Util.spawn_at_pos(self)
+		var proj = Util.spawn_projectile(self)
 		proj.global_rotation = (Player.I.global_position - global_position).angle()

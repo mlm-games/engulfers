@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://rdrha6kurqo2"]
+
+[ext_resource type="PackedScene" uid="uid://c858pjqlq4uir" path="res://game/scenes/entities/base_entity.tscn" id="1_llqnm"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_bapke"]
+viewport_path = NodePath("VisualComponent/Viewport3DTo2D")
+
+[node name="TitleEntity" instance=ExtResource("1_llqnm")]
+
+[node name="Particles2D" parent="VisualComponent" index="0"]
+texture = SubResource("ViewportTexture_bapke")

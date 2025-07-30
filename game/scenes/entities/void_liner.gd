@@ -37,7 +37,7 @@ func _shoot_random_target() -> void:
 		_shoot_at(target)
 
 func _shoot_at(target: Node2D) -> void:
-	var projectile := Util.spawn_at_pos(self, C.Projectiles.VoidLinerProjectile)
+	var projectile := Util.spawn_projectile(self, C.Projectiles.VoidLinerProjectile)
 	projectile.direction = (target.global_position - global_position).normalized()
 	#AudioM.play_sound(C.Audio.Dash)
 

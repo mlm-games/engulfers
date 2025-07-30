@@ -10,4 +10,7 @@ func _ready() -> void:
 	await STransitions.transition_player.animation_finished
 	
 	#Juice.pop_in(%TextureRect, 2.0)
-	
+	%SpawnTimer.timeout.connect(_spawn_title_entity)
+
+func _spawn_title_entity():
+	EnemyManager.I._spawn_enemy(C.Enemies.TitleEntity, %SpawnMarker2D.global_position)

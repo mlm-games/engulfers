@@ -28,7 +28,7 @@ func void_consume():
 	animate_free()
 
 func shoot():
-	Util.spawn_at_pos(self, C.Projectiles.PlayerVoidProjectile)
+	Util.spawn_projectile(self, C.Projectiles.PlayerVoidProjectile)
 
 
 func _withdraw_entity_and_transition() -> void:
