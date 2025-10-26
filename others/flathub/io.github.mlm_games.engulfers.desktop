@@ -1,9 +1,9 @@
 [Desktop Entry]
 Name=Engulfers
 GenericName=Engulfers
-Comment=<PlaceholderShortDesc>
+Comment=Eliminate all void entities to win!
 Exec=engulfers %F
 Icon=io.github.mlm_games.engulfers
 Terminal=false
 Type=Application
-Categories=<PlaceholderCategories>
+Categories=Game;Amusement
