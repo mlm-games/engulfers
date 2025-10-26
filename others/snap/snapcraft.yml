@@ -1,9 +1,9 @@
 name: engulfers
 base: core22
-version: '0.1.0'
-summary: <PlaceHolderShortDesc>
+version: '0.1.6'
+summary: Capture all entities to win!
 description: |
-  <PlaceHolderLongDesc>
+  Play as an symbiote of light who controls void entities set in the aftermath of an extinction causing event led by void entities. Eliminate all the void entities to win!
 
 grade: stable
 confinement: strict
@@ -16,17 +16,7 @@ apps:
   engulfers:
     command: engulfers
     extensions: [gnome]
-    plugs:
-      - home
-      - removable-media
-      - network
-      - opengl
-      - x11
-      - wayland
-      - desktop
-      - desktop-legacy
-      - unity7
-    desktop: others/snap/gui/engulfers.desktop
+    plugs: [home, network, removable-media, unity7]
 
 parts:
   engulfers:
