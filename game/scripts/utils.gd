@@ -16,7 +16,7 @@ static func spawn_projectile(emitter: BaseVoidEntity, scene := C.Projectiles.Pla
 	inst.global_rotation = global_rot
 	inst.emitter = emitter
 	inst.body_entered.connect(emitter.on_void_body_hit)
-	Engine.get_main_loop().root.add_child(inst)
+	BaseLevel.I.add_child(inst)
 	return inst
 
 #endregion

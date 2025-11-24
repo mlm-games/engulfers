@@ -13,7 +13,6 @@ projectile_spawn_time_range = null
 wander_speed = 100.0
 wander_radius = null
 idle_time_range = Vector2(0.5, 1.5)
-size = null
 
 [node name="Particles2D" parent="VisualComponent" index="0"]
 texture = SubResource("ViewportTexture_t8ci3")
