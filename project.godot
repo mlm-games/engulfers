@@ -11,12 +11,7 @@ config_version=5
 [application]
 
 config/name="Engulfers"
-config/description="It consumes entities? or It is a symbiote? Mostly wanted to have a initil
-
-
-
-
-."
+config/description="It consumes entities? or is it a symbiote?"
 run/main_scene="uid://bmmltlbfwh0bh"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0.0924416, 0.147392, 0.187741, 1)
