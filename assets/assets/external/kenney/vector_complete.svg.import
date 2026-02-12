@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://bxhr5r1rfwigq"
-path="res://.godot/imported/vector_complete.svg-7a62ab6999f4ef890d5c5633cd8a6c6d.svgtex"
+path="res://.godot/imported/vector_complete.svg-7a62ab6999f4ef890d5c5633cd8a6c6d.dpitex"
 
 [deps]
 
 source_file="res://assets/assets/external/kenney/vector_complete.svg"
-dest_files=["res://.godot/imported/vector_complete.svg-7a62ab6999f4ef890d5c5633cd8a6c6d.svgtex"]
+dest_files=["res://.godot/imported/vector_complete.svg-7a62ab6999f4ef890d5c5633cd8a6c6d.dpitex"]
 
 [params]
 

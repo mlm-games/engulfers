@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://ci4yy6s854qm2"]
+[gd_resource type="TileSet" format=3 uid="uid://ci4yy6s854qm2"]
 
 [ext_resource type="Texture2D" uid="uid://bxhr5r1rfwigq" path="res://assets/assets/external/kenney/vector_complete.svg" id="1_o1o7s"]
 [ext_resource type="Texture2D" uid="uid://dq5ok2scpsoqt" path="res://assets/assets/tileset.svg" id="2_872w1"]

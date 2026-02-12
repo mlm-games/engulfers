@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bl3j3ma1mkw32"]
+[gd_scene format=3 uid="uid://bl3j3ma1mkw32"]
 
 [ext_resource type="PackedScene" uid="uid://bf7ekfb0clfv1" path="res://game/scenes/components/particles_base_3d.tscn" id="1_qs1un"]
 
@@ -29,9 +29,9 @@ material = SubResource("StandardMaterial3D_q6php")
 top_radius = 0.1
 bottom_radius = 0.0
 
-[node name="VoidConsume3D" instance=ExtResource("1_qs1un")]
+[node name="VoidConsume3D" unique_id=609910774 instance=ExtResource("1_qs1un")]
 
-[node name="Debris" type="GPUParticles3D" parent="GPUParticlesNode" index="0"]
+[node name="Debris" type="GPUParticles3D" parent="GPUParticlesNode" parent_id_path=PackedInt32Array(376856807) index="0" unique_id=1428394521]
 emitting = false
 amount = 24
 interp_to_end = 0.2
@@ -41,6 +41,6 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_ys4r3")
 draw_pass_1 = SubResource("CylinderMesh_73v88")
 
-[node name="Camera3D" parent="." index="1"]
+[node name="Camera3D" parent="." index="1" unique_id=1880077384]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.290152)
 fov = 65.7

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b514xdo8luaew"]
+[gd_scene format=3 uid="uid://b514xdo8luaew"]
 
 [ext_resource type="Script" uid="uid://bv4gwvvm4oubu" path="res://game/scenes/ui/end_screen.gd" id="1_1fwfn"]
 [ext_resource type="Script" uid="uid://delwv8raptagh" path="res://game/scenes/components/particles_base_3d.gd" id="2_i11ne"]
@@ -32,7 +32,7 @@ metadata/_custom_type_script = "uid://l370maunxroj"
 script = ExtResource("7_3hkna")
 metadata/_custom_type_script = "uid://capjhvihqotjp"
 
-[node name="EndScreen" type="Control"]
+[node name="EndScreen" type="Control" unique_id=1350938245]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,7 +41,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1fwfn")
 
-[node name="TextureRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="ColorRect" parent="." unique_id=812918901]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -54,37 +54,37 @@ pivot_offset = Vector2(576, 324)
 color = Color(0.03379405, 0.033777896, 0.073821716, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite3DTo2D" type="Sprite2D" parent="."]
+[node name="Sprite3DTo2D" type="Sprite2D" parent="." unique_id=1878327741]
 position = Vector2(582.5, 316)
 scale = Vector2(2.2910156, 1.2304686)
 texture = SubResource("ViewportTexture_w3jef")
 
-[node name="SubViewport" type="SubViewport" parent="Sprite3DTo2D"]
+[node name="SubViewport" type="SubViewport" parent="Sprite3DTo2D" unique_id=981573494]
 transparent_bg = true
 gui_disable_input = true
 
-[node name="Camera3D" type="Camera3D" parent="Sprite3DTo2D/SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="Sprite3DTo2D/SubViewport" unique_id=873485185]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.727793)
 fov = 165.5
 
-[node name="ParticlesBase3D" type="Node3D" parent="Sprite3DTo2D/SubViewport"]
+[node name="ParticlesBase3D" type="Node3D" parent="Sprite3DTo2D/SubViewport" unique_id=1207309485]
 unique_name_in_owner = true
 script = ExtResource("2_i11ne")
 
-[node name="GPUParticlesNode" type="Node3D" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D"]
+[node name="GPUParticlesNode" type="Node3D" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D" unique_id=282819987]
 unique_name_in_owner = true
 
-[node name="Explosion3D" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode" instance=ExtResource("3_8rr8d")]
+[node name="Explosion3D" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode" unique_id=1442156632 instance=ExtResource("3_8rr8d")]
 
-[node name="Debris" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D/GPUParticlesNode" index="0"]
+[node name="Debris" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D/GPUParticlesNode" parent_id_path=PackedInt32Array(1442156632, 376856807) index="0" unique_id=1428394521]
 emitting = true
 one_shot = false
 explosiveness = 0.05
 
-[node name="Camera3D" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D" index="1"]
+[node name="Camera3D" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D" index="1" unique_id=1880077384]
 fov = 8.2
 
-[node name="GameLogo" type="TextureRect" parent="."]
+[node name="GameLogo" type="TextureRect" parent="." unique_id=331612673]
 unique_name_in_owner = true
 visible = false
 modulate = Color(1, 1, 1, 0)
@@ -103,7 +103,7 @@ grow_vertical = 2
 scale = Vector2(0.64720196, 0.64720196)
 pivot_offset = Vector2(540, 411)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=86015551]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -119,7 +119,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 custom_effects = [SubResource("RichTextEffect_h2f6c")]
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=1434694899]
 visible = false
 material = SubResource("ShaderMaterial_q71cj")
 layout_mode = 1
@@ -136,7 +136,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 custom_effects = [SubResource("RichTextEffect_h2f6c"), SubResource("RichTextEffect_qitgv"), SubResource("RichTextEffect_fmw4l")]
 
-[node name="PlayButton" type="Button" parent="."]
+[node name="PlayButton" type="Button" parent="." unique_id=786346910]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -155,7 +155,7 @@ text = "Restart?"
 script = ExtResource("8_2u6lm")
 metadata/_custom_type_script = "uid://cmo5qw3rubish"
 
-[node name="TimeLabel" type="RichTextLabel" parent="."]
+[node name="TimeLabel" type="RichTextLabel" parent="." unique_id=1497277785]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 452.0

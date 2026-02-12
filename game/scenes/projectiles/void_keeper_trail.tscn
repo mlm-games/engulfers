@@ -1,7 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://6gqwjut13rcg"]
+[gd_scene format=3 uid="uid://6gqwjut13rcg"]
 
 [ext_resource type="PackedScene" uid="uid://bbt3a13kvykbv" path="res://game/scenes/projectiles/void_projectile.tscn" id="1_a4mn5"]
 
-[node name="VoidKeeperTrail" instance=ExtResource("1_a4mn5")]
+[node name="VoidKeeperTrail" unique_id=741203459 instance=ExtResource("1_a4mn5")]
 max_range = 100
 speed = 100

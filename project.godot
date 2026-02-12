@@ -18,7 +18,7 @@ config/description="It consumes entities? or It is a symbiote? Mostly wanted to 
 
 ."
 run/main_scene="uid://bmmltlbfwh0bh"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0.0924416, 0.147392, 0.187741, 1)
 config/icon="uid://c01iac6jh763q"
 
@@ -27,10 +27,10 @@ config/icon="uid://c01iac6jh763q"
 STransitions="*res://addons/my-ecosystem-template/transitions/screen_transitions.tscn"
 AudioM="*res://addons/my-ecosystem-template/autoloads/static_audio_manager.gd"
 UiAudioM="*res://addons/my-ecosystem-template/autoloads/ui_audio_manager.gd"
-SettingsManager="*res://addons/basic_settings_menu/settings_manager.gd"
-SettingsApplier="*res://addons/basic_settings_menu/settings_applier.gd"
+SettingsManager="*uid://wfehnu87uuxk"
+SettingsApplier="*uid://b5jtf7dbnupqj"
 PauseMenu="*res://addons/my-ecosystem-template/pause-menu/pause_menu.tscn"
-LayerNames="*res://addons/layer_names/generated/layer_names.gd"
+LayerNames="*uid://dpotfesii40yn"
 CommonGlobals="*res://autoloads/common_globals.gd"
 BgMusicPlayer="*res://addons/my-ecosystem-template/autoloads/bg_music_player.tscn"
 A="*res://game/scripts/autoload.tscn"

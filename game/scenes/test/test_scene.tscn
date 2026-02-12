@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://babefhxnseam6"]
+[gd_scene format=3 uid="uid://babefhxnseam6"]
 
 [ext_resource type="Script" uid="uid://bxlu601ev7jmw" path="res://game/scenes/test/test_scene.gd" id="1_q75a4"]
 [ext_resource type="PackedScene" uid="uid://c7pq82ai3kfyg" path="res://game/scenes/test/explosion_3d.tscn" id="2_iyhu2"]
 [ext_resource type="Script" uid="uid://cpmbe08fh6xs1" path="res://game/scenes/components/viewport_3d_to_2d.gd" id="3_iyhu2"]
 
-[node name="TestScene" type="Control"]
+[node name="TestScene" type="Control" unique_id=125776424]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,10 +14,10 @@ grow_vertical = 2
 script = ExtResource("1_q75a4")
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite3DTo2D_SubViewport#Explosion3D" parent="." instance=ExtResource("2_iyhu2")]
+[node name="Sprite3DTo2D_SubViewport#Explosion3D" parent="." unique_id=1208093844 instance=ExtResource("2_iyhu2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 593, 254, 0)
 
-[node name="Sprite3DTo2D" type="SubViewport" parent="."]
+[node name="Sprite3DTo2D" type="SubViewport" parent="." unique_id=672391553]
 transparent_bg = true
 gui_disable_input = true
 size = Vector2i(250, 250)

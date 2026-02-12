@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://2vnoaw7gtgkd"]
+[gd_scene format=4 uid="uid://2vnoaw7gtgkd"]
 
 [ext_resource type="Script" uid="uid://bpyt0xmjxv7wd" path="res://game/scenes/levels/tutorial/tutorial_level.gd" id="1_nl3hf"]
 [ext_resource type="TileSet" uid="uid://ci4yy6s854qm2" path="res://game/resources/test-arena-tileset.tres" id="2_qjqox"]
@@ -9,15 +9,15 @@
 radius = 32.0
 height = 800.0
 
-[node name="TutorialLevel" type="Node2D"]
+[node name="TutorialLevel" type="Node2D" unique_id=759587985]
 script = ExtResource("1_nl3hf")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=608710904]
 tile_map_data = PackedByteArray("AAAMAAUAAQAFAAUAAAAMAAQAAQAFAAQAAAAMAAMAAQAFAAMAAAALAAUAAQAEAAUAAAALAAQAAQAEAAQAAAALAAMAAQAEAAMAAAAKAAUAAQAEAAUAAAAKAAQAAQAEAAQAAAAKAAMAAQAEAAMAAAAJAAUAAQAEAAUAAAAJAAQAAQAEAAQAAAAJAAMAAQAEAAMAAAAIAAUAAQAEAAUAAAAIAAQAAQAEAAQAAAAIAAMAAQAEAAMAAAAHAAUAAQAEAAUAAAAHAAQAAQAEAAQAAAAHAAMAAQAEAAMAAAAGAAUAAQADAAUAAAAGAAQAAQADAAQAAAAGAAMAAQADAAMAAAAFAAUAAQAHAAQAAAAFAAQAAQAHAAMAAAAFAAMAAQAHAAIAAAANAAUAAQAJAAQAAAANAAQAAQAJAAMAAAANAAMAAQAJAAIAAAAFAAkAAQADAAUAAAAFAAgAAQADAAQAAAANAAkAAQAEAAUAAAANAAgAAQAEAAQAAAAMAAkAAQAEAAUAAAAMAAgAAQAEAAQAAAALAAkAAQAEAAUAAAALAAgAAQAEAAQAAAAKAAkAAQAEAAUAAAAKAAgAAQAEAAQAAAAJAAkAAQAEAAUAAAAJAAgAAQAEAAQAAAAIAAkAAQAEAAUAAAAIAAgAAQAEAAQAAAAHAAkAAQAEAAUAAAAHAAgAAQAEAAQAAAAGAAkAAQAEAAUAAAAGAAgAAQAEAAQAAAASAAkAAQAEAAUAAAASAAgAAQAEAAQAAAARAAkAAQAEAAUAAAARAAgAAQAEAAQAAAAQAAkAAQAEAAUAAAAQAAgAAQAEAAQAAAAPAAkAAQAEAAUAAAAPAAgAAQAEAAQAAAAOAAkAAQAEAAUAAAAOAAgAAQAEAAQAAAAFAAcAAQADAAMAAAAGAAcAAQAEAAMAAAAHAAcAAQAEAAMAAAAIAAcAAQAEAAMAAAAJAAcAAQAEAAMAAAAKAAcAAQAEAAMAAAALAAcAAQAEAAMAAAAMAAcAAQAEAAMAAAANAAcAAQAEAAMAAAAOAAcAAQAEAAMAAAAPAAcAAQAEAAMAAAAQAAcAAQAEAAMAAAARAAcAAQAEAAMAAAASAAcAAQAEAAMAAAATAAcAAQAFAAMAAAATAAgAAQAFAAQAAAATAAkAAQAFAAUAAAA=")
 tile_set = ExtResource("2_qjqox")
 metadata/_edit_lock_ = true
 
-[node name="TutorialLabel" type="RichTextLabel" parent="."]
+[node name="TutorialLabel" type="RichTextLabel" parent="." unique_id=1312287928]
 unique_name_in_owner = true
 offset_left = 495.0
 offset_top = 119.0
@@ -26,21 +26,21 @@ offset_bottom = 190.89
 text = "Press WASD to Move "
 metadata/_edit_use_anchors_ = true
 
-[node name="Player" parent="." instance=ExtResource("5_j5f0x")]
+[node name="Player" parent="." unique_id=2020386472 instance=ExtResource("5_j5f0x")]
 position = Vector2(488, 297)
 
-[node name="VoidKeeper" parent="." instance=ExtResource("6_veyu2")]
+[node name="VoidKeeper" parent="." unique_id=443023166 instance=ExtResource("6_veyu2")]
 position = Vector2(496, 555)
 projectile_lifetime = 5.0
 projectile_spawn_time_range = Vector2(0.3, 0.3)
 wander_radius = 100.0
 size = 100
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=530420588]
 unique_name_in_owner = true
 anchor_mode = 0
 
-[node name="TriggerArea1" type="Area2D" parent="."]
+[node name="TriggerArea1" type="Area2D" parent="." unique_id=1646631845]
 visible = false
 position = Vector2(746, 576)
 collision_layer = 0
@@ -48,16 +48,16 @@ collision_mask = 10
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea1" unique_id=1115149136]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_s6hp3")
 
-[node name="TriggerAreaEnd" type="Area2D" parent="."]
+[node name="TriggerAreaEnd" type="Area2D" parent="." unique_id=865764567]
 visible = false
 position = Vector2(1215, 322)
 collision_layer = 0
 collision_mask = 8
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerAreaEnd"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerAreaEnd" unique_id=1830076479]
 shape = SubResource("CapsuleShape2D_s6hp3")

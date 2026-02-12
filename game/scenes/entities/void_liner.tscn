@@ -1,34 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://qu1w67qq821n"]
+[gd_scene format=3 uid="uid://qu1w67qq821n"]
 
 [ext_resource type="PackedScene" uid="uid://c858pjqlq4uir" path="res://game/scenes/entities/base_entity.tscn" id="1_hrenx"]
 [ext_resource type="Script" uid="uid://dfk0uix57lssn" path="res://game/scenes/entities/void_liner.gd" id="2_7aven"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_h266x"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_1a1ed"]
 viewport_path = NodePath("VisualComponent/Viewport3DTo2D")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1a1ed"]
 radius = 135.03333
 
-[node name="VoidLiner" instance=ExtResource("1_hrenx")]
+[node name="VoidLiner" unique_id=1251025199 instance=ExtResource("1_hrenx")]
 script = ExtResource("2_7aven")
 shoot_interval = null
 provoked_shoot_interval = null
 chase_speed_multiplier = null
-projectile_scene = null
-trail_lifetime = null
-trail_scene = null
+projectile_lifetime = 5.0
+projectile_spawn_time_range = Vector2(0.3, 0.3)
 wander_speed = 100.0
 wander_radius = 200.0
-idle_time = 2.0
-size = null
+idle_time_range = Vector2(3, 3)
 
-[node name="Particles2D" parent="VisualComponent" index="0"]
-texture = SubResource("ViewportTexture_h266x")
+[node name="Particles2D" parent="VisualComponent" parent_id_path=PackedInt32Array(1878557370) index="0" unique_id=121192987]
+texture = SubResource("ViewportTexture_1a1ed")
 
-[node name="MissedProjectileDetectionArea2D" type="Area2D" parent="." index="7"]
+[node name="MissedProjectileDetectionArea2D" type="Area2D" parent="." index="6" unique_id=114755571]
 unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 20
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MissedProjectileDetectionArea2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissedProjectileDetectionArea2D" index="0" unique_id=1630212600]
 shape = SubResource("CircleShape2D_1a1ed")

@@ -1,57 +1,50 @@
-[gd_scene load_steps=5 format=4 uid="uid://cbe687v1s1nj4"]
+[gd_scene format=4 uid="uid://cbe687v1s1nj4"]
 
 [ext_resource type="PackedScene" uid="uid://di8x0d1gjray0" path="res://game/scenes/levels/base_level.tscn" id="1_cdsn8"]
 [ext_resource type="Script" uid="uid://dtrq6wvcv5etj" path="res://game/scenes/levels/level_1.gd" id="2_kwt3e"]
 [ext_resource type="PackedScene" uid="uid://qu1w67qq821n" path="res://game/scenes/entities/void_liner.tscn" id="3_tnbl4"]
 [ext_resource type="PackedScene" uid="uid://dabg8sulcosd5" path="res://game/scenes/entities/void_keeper.tscn" id="4_dx4jp"]
 
-[node name="Level5" instance=ExtResource("1_cdsn8")]
+[sub_resource type="ViewportTexture" id="ViewportTexture_cdsn8"]
+viewport_path = NodePath("Sprite3DTo2D/SubViewport")
+
+[node name="Level5" unique_id=1800635327 instance=ExtResource("1_cdsn8")]
 script = ExtResource("2_kwt3e")
 
-[node name="Level" parent="." index="0"]
+[node name="Sprite3DTo2D" parent="." index="0" unique_id=536821173]
+texture = SubResource("ViewportTexture_cdsn8")
+
+[node name="Level" parent="." index="1" unique_id=609855545]
 tile_map_data = PackedByteArray("AAAFAAEAAQAEAAMAAAAGAAEAAQAEAAMAAAAHAAEAAQAEAAMAAAAIAAEAAQAEAAMAAAAJAAEAAQAEAAMAAAAKAAEAAQAEAAMAAAALAAEAAQAEAAMAAAAMAAEAAQAEAAMAAAAFAAIAAQAEAAQAAAAGAAIAAQAEAAQAAAAHAAIAAQAEAAQAAAAIAAIAAQAEAAQAAAAJAAIAAQAEAAQAAAAKAAIAAQAEAAQAAAALAAIAAQAEAAQAAAAMAAIAAQAEAAQAAAAFAAMAAQAEAAQAAAAGAAMAAQAEAAQAAAAHAAMAAQAEAAQAAAAIAAMAAQAEAAQAAAAJAAMAAQAEAAQAAAAKAAMAAQAEAAQAAAALAAMAAQADAAIAAFAMAAMAAQAEAAUAAAAFAAQAAQADAAIAADAGAAQAAQADAAIAAFAHAAQAAQAEAAUAAAAIAAQAAQADAAIAADAJAAQAAQAEAAQAAAAKAAQAAQADAAIAAFALAAQAAQAFAAUAAAAFAAUAAQADAAQAAAAGAAUAAQAFAAQAAAAIAAUAAQADAAQAAAAJAAUAAQAEAAQAAAAKAAUAAQAFAAQAAAAFAAYAAQADAAIAAGAGAAYAAQADAAIAAAAHAAYAAQAEAAMAAAAIAAYAAQADAAIAAGAJAAYAAQAEAAQAAAAKAAYAAQADAAIAAAALAAYAAQAEAAMAAAAMAAYAAQAEAAMAAAAFAAcAAQAEAAQAAAAGAAcAAQAEAAQAAAAHAAcAAQADAAIAAFAIAAcAAQAEAAUAAAAJAAcAAQAEAAUAAAAKAAcAAQAEAAUAAAALAAcAAQADAAIAADAMAAcAAQAEAAQAAAADAAEAAQADAAMAAAAEAAEAAQAEAAMAAAADAAIAAQADAAQAAAAEAAIAAQAEAAQAAAADAAMAAQADAAUAAAAEAAMAAQADAAIAADACAAYAAQADAAMAAAADAAYAAQAEAAMAAAAEAAYAAQAEAAMAAAACAAcAAQADAAQAAAADAAcAAQAEAAQAAAAEAAcAAQAEAAQAAAACAAgAAQADAAQAAAADAAgAAQAEAAQAAAAEAAgAAQAEAAQAAAAFAAgAAQADAAIAAFACAAkAAQADAAUAAAADAAkAAQAEAAUAAAAEAAkAAQAEAAUAAAAFAAkAAQAFAAUAAAANAAYAAQAEAAMAAAAOAAYAAQAEAAMAAAAPAAYAAQAEAAMAAAAQAAYAAQAFAAMAAAANAAcAAQAEAAQAAAAOAAcAAQAEAAQAAAAPAAcAAQAEAAQAAAAQAAcAAQAFAAQAAAAMAAgAAQAEAAQAAAANAAgAAQAEAAQAAAAOAAgAAQAEAAQAAAAPAAgAAQAEAAQAAAAQAAgAAQAFAAQAAAAMAAkAAQAEAAUAAAANAAkAAQAEAAUAAAAOAAkAAQAEAAUAAAAPAAkAAQAEAAUAAAAQAAkAAQAFAAUAAAANAAEAAQAEAAMAAAAOAAEAAQAEAAMAAAAPAAEAAQAFAAMAAAANAAIAAQAEAAQAAAAOAAIAAQAEAAQAAAAPAAIAAQAFAAQAAAANAAMAAQAEAAUAAAAOAAMAAQAEAAUAAAAPAAMAAQAFAAUAAAAEAAQAAQADAAUAAAAGAAgAAQAEAAUAAAAHAAgAAQAFAAUAAAALAAgAAQADAAQAAAALAAkAAQADAAUAAAA=")
 
-[node name="Decoration" parent="." index="1"]
+[node name="Decoration" parent="." index="2" unique_id=1159734645]
 tile_map_data = PackedByteArray("AAAFAAIAAQAKAAIAAAAMAAIAAQAKAAIAAAAIAAIAAQAKAAMAAAAOAAgAAQAKAAEAAAADAAcAAQAKAAMAAAAEAAgAAQAKAAMAAAA=")
 
-[node name="Player" parent="." index="2"]
+[node name="Player" parent="." index="3" unique_id=749801280]
 position = Vector2(282, 155)
 
-[node name="VoidLiner" parent="EntityNode" index="0" instance=ExtResource("3_tnbl4")]
+[node name="VoidLiner" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="0" unique_id=656068932 instance=ExtResource("3_tnbl4")]
 position = Vector2(1007, 474)
-projectile_lifetime = 5.0
-projectile_spawn_time_range = Vector2(0.3, 0.3)
-idle_time_range = Vector2(3, 3)
 
-[node name="VoidLiner2" parent="EntityNode" index="1" instance=ExtResource("3_tnbl4")]
+[node name="VoidLiner2" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="1" unique_id=719259794 instance=ExtResource("3_tnbl4")]
 position = Vector2(194, 557)
-projectile_lifetime = 5.0
-projectile_spawn_time_range = Vector2(0.3, 0.3)
-idle_time_range = Vector2(3, 3)
 
-[node name="VoidLiner3" parent="EntityNode" index="2" instance=ExtResource("3_tnbl4")]
+[node name="VoidLiner3" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="2" unique_id=954760114 instance=ExtResource("3_tnbl4")]
 position = Vector2(949, 183)
-projectile_lifetime = 5.0
-projectile_spawn_time_range = Vector2(0.3, 0.3)
-idle_time_range = Vector2(3, 3)
 
-[node name="VoidLiner4" parent="EntityNode" index="3" instance=ExtResource("3_tnbl4")]
+[node name="VoidLiner4" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="3" unique_id=1267086198 instance=ExtResource("3_tnbl4")]
 position = Vector2(614, 357)
-projectile_lifetime = 5.0
-projectile_spawn_time_range = Vector2(0.3, 0.3)
-idle_time_range = Vector2(3, 3)
 
-[node name="VoidLiner5" parent="EntityNode" index="4" instance=ExtResource("3_tnbl4")]
+[node name="VoidLiner5" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="4" unique_id=822058690 instance=ExtResource("3_tnbl4")]
 position = Vector2(386, 360)
-projectile_lifetime = 5.0
-projectile_spawn_time_range = Vector2(0.3, 0.3)
-idle_time_range = Vector2(3, 3)
 
-[node name="VoidKeeper" parent="EntityNode" index="5" instance=ExtResource("4_dx4jp")]
+[node name="VoidKeeper" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="5" unique_id=1259065851 instance=ExtResource("4_dx4jp")]
 position = Vector2(840, 574)
 
-[node name="VoidKeeper2" parent="EntityNode" index="6" instance=ExtResource("4_dx4jp")]
+[node name="VoidKeeper2" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="6" unique_id=1637594526 instance=ExtResource("4_dx4jp")]
 position = Vector2(317, 447)
 
-[node name="VoidKeeper3" parent="EntityNode" index="7" instance=ExtResource("4_dx4jp")]
+[node name="VoidKeeper3" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="7" unique_id=1497707911 instance=ExtResource("4_dx4jp")]
 position = Vector2(608, 125)
+
+[editable path="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D"]

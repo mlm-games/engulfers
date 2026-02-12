@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://oqn3qh25vth4"]
+[gd_scene format=3 uid="uid://oqn3qh25vth4"]
 
 [ext_resource type="Script" uid="uid://bxfwyvw3ntd0m" path="res://game/scripts/enemy_manager.gd" id="1_ks8t4"]
 
-[node name="BGMusicManager" type="AudioStreamPlayer"]
+[node name="BGMusicManager" type="AudioStreamPlayer" unique_id=288692501]
 
-[node name="EnemyManager" type="Node" parent="."]
+[node name="EnemyManager" type="Node" parent="." unique_id=351288557]
 script = ExtResource("1_ks8t4")
 metadata/_custom_type_script = "uid://bxfwyvw3ntd0m"

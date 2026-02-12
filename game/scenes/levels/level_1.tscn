@@ -1,36 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8p2hg2wy36d3"]
+[gd_scene format=3 uid="uid://c8p2hg2wy36d3"]
 
 [ext_resource type="PackedScene" uid="uid://di8x0d1gjray0" path="res://game/scenes/levels/base_level.tscn" id="1_mxxve"]
 [ext_resource type="Script" uid="uid://dtrq6wvcv5etj" path="res://game/scenes/levels/level_1.gd" id="2_1k2pe"]
 [ext_resource type="PackedScene" uid="uid://dabg8sulcosd5" path="res://game/scenes/entities/void_keeper.tscn" id="2_5gvcb"]
 
-[node name="Level1" instance=ExtResource("1_mxxve")]
+[sub_resource type="ViewportTexture" id="ViewportTexture_1k2pe"]
+viewport_path = NodePath("Sprite3DTo2D/SubViewport")
+
+[node name="Level1" unique_id=1578586162 instance=ExtResource("1_mxxve")]
 script = ExtResource("2_1k2pe")
 
-[node name="VoidKeeper" parent="EntityNode" index="0" instance=ExtResource("2_5gvcb")]
+[node name="Sprite3DTo2D" parent="." index="0" unique_id=536821173]
+texture = SubResource("ViewportTexture_1k2pe")
+
+[node name="VoidKeeper" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="0" unique_id=1915829757 instance=ExtResource("2_5gvcb")]
 position = Vector2(704, 325)
 projectile_lifetime = 5.0
 projectile_spawn_time_range = Vector2(0.3, 0.3)
 wander_radius = 100.0
 size = 100
 
-[node name="VoidKeeper2" parent="EntityNode" index="1" instance=ExtResource("2_5gvcb")]
+[node name="VoidKeeper2" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="1" unique_id=462069746 instance=ExtResource("2_5gvcb")]
 position = Vector2(722, 179)
 projectile_lifetime = 5.0
 projectile_spawn_time_range = Vector2(0.3, 0.3)
 wander_radius = 100.0
 size = 100
 
-[node name="VoidKeeper3" parent="EntityNode" index="2" instance=ExtResource("2_5gvcb")]
+[node name="VoidKeeper3" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="2" unique_id=1485121544 instance=ExtResource("2_5gvcb")]
 position = Vector2(689, 438)
 projectile_lifetime = 5.0
 projectile_spawn_time_range = Vector2(0.3, 0.3)
 wander_radius = 100.0
 size = 100
 
-[node name="VoidKeeper4" parent="EntityNode" index="3" instance=ExtResource("2_5gvcb")]
+[node name="VoidKeeper4" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="3" unique_id=148538369 instance=ExtResource("2_5gvcb")]
 position = Vector2(486, 175)
 projectile_lifetime = 5.0
 projectile_spawn_time_range = Vector2(0.3, 0.3)
 wander_radius = 100.0
 size = 100
+
+[editable path="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D"]

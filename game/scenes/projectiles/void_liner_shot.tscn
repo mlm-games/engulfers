@@ -1,8 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccapqmsd0lvuq"]
+[gd_scene format=3 uid="uid://ccapqmsd0lvuq"]
 
 [ext_resource type="PackedScene" uid="uid://bbt3a13kvykbv" path="res://game/scenes/projectiles/void_projectile.tscn" id="1_th2ob"]
 
-[node name="VoidLinerShot" instance=ExtResource("1_th2ob")]
-collision_mask = 10
+[node name="VoidLinerShot" unique_id=45804554 instance=ExtResource("1_th2ob")]
 max_range = 300
 speed = 100

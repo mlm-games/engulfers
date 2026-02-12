@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b07xf8wkt8anc"]
+[gd_scene format=3 uid="uid://b07xf8wkt8anc"]
 
 [ext_resource type="PackedScene" uid="uid://c858pjqlq4uir" path="res://game/scenes/entities/base_entity.tscn" id="1_ilftr"]
 [ext_resource type="Script" uid="uid://d4blwvovul0uu" path="res://game/scenes/entities/title_entity.gd" id="2_qhif6"]
@@ -6,13 +6,13 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_bapke"]
 viewport_path = NodePath("VisualComponent/Viewport3DTo2D")
 
-[node name="TitleEntity" instance=ExtResource("1_ilftr")]
+[node name="TitleEntity" unique_id=116534777 instance=ExtResource("1_ilftr")]
 script = ExtResource("2_qhif6")
 
-[node name="Particles2D" parent="VisualComponent" index="0"]
+[node name="Particles2D" parent="VisualComponent" parent_id_path=PackedInt32Array(1878557370) index="0" unique_id=121192987]
 texture = SubResource("ViewportTexture_bapke")
 
-[node name="ShootTimer" type="Timer" parent="." index="6"]
+[node name="ShootTimer" type="Timer" parent="." index="6" unique_id=1462780052]
 unique_name_in_owner = true
 one_shot = true
 autostart = true

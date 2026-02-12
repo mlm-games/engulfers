@@ -1,24 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpncxcrpvt8jl"]
+[gd_scene format=3 uid="uid://bpncxcrpvt8jl"]
 
 [ext_resource type="Script" uid="uid://ixpppcuhpbdm" path="res://game/scripts/autoload.gd" id="1_3yjwb"]
 [ext_resource type="Script" uid="uid://d0om2ye5hhdj1" path="res://game/scripts/managers/level_manager.gd" id="2_tcxmy"]
 [ext_resource type="AudioStream" uid="uid://bbytj16fy0ees" path="res://assets/audio/99Sounds x Monosounds - EDM Drum Loop - 06 - 100 BPM.wav" id="3_yjvxt"]
 [ext_resource type="Script" uid="uid://wpqikjmqp770" path="res://game/scripts/constants.gd" id="4_6yg5w"]
 
-[node name="AutoLoad" type="Node"]
+[node name="AutoLoad" type="Node" unique_id=659154733]
 script = ExtResource("1_3yjwb")
 
-[node name="LevelManager" type="Node" parent="."]
+[node name="LevelManager" type="Node" parent="." unique_id=406581044]
 script = ExtResource("2_tcxmy")
 metadata/_custom_type_script = "uid://d0om2ye5hhdj1"
 
-[node name="BGMusic" type="AudioStreamPlayer" parent="."]
+[node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=768450885]
 stream = ExtResource("3_yjvxt")
 autoplay = true
 
-[node name="GameTimer" type="Timer" parent="."]
+[node name="GameTimer" type="Timer" parent="." unique_id=503605857]
 unique_name_in_owner = true
 
-[node name="C" type="Node" parent="."]
+[node name="C" type="Node" parent="." unique_id=1895081558]
 script = ExtResource("4_6yg5w")
 metadata/_custom_type_script = "uid://wpqikjmqp770"

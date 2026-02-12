@@ -1,89 +1,82 @@
-[gd_scene load_steps=5 format=4 uid="uid://u46m6v14i6dj"]
+[gd_scene format=4 uid="uid://u46m6v14i6dj"]
 
 [ext_resource type="PackedScene" uid="uid://di8x0d1gjray0" path="res://game/scenes/levels/base_level.tscn" id="1_5mm0p"]
 [ext_resource type="Script" uid="uid://dtrq6wvcv5etj" path="res://game/scenes/levels/level_1.gd" id="2_3ybo8"]
 [ext_resource type="PackedScene" uid="uid://qu1w67qq821n" path="res://game/scenes/entities/void_liner.tscn" id="3_khyal"]
 [ext_resource type="PackedScene" uid="uid://dabg8sulcosd5" path="res://game/scenes/entities/void_keeper.tscn" id="4_ndqdc"]
 
-[node name="Level6" instance=ExtResource("1_5mm0p")]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5mm0p"]
+viewport_path = NodePath("Sprite3DTo2D/SubViewport")
+
+[node name="Level6" unique_id=2092928057 instance=ExtResource("1_5mm0p")]
 script = ExtResource("2_3ybo8")
 
-[node name="Level" parent="." index="0"]
+[node name="Sprite3DTo2D" parent="." index="0" unique_id=536821173]
+texture = SubResource("ViewportTexture_5mm0p")
+
+[node name="Level" parent="." index="1" unique_id=609855545]
 tile_map_data = PackedByteArray("AAAFAAEAAQAFAAMAAAAFAAIAAQAFAAQAAAAFAAMAAQAFAAQAAAAFAAQAAQAFAAQAAAAIAAQAAQADAAMAAAAJAAQAAQAEAAMAAAAKAAQAAQAFAAMAAAAFAAUAAQAFAAQAAAAIAAUAAQADAAQAAAAJAAUAAQAEAAQAAAAKAAUAAQAFAAQAAAAFAAYAAQAFAAQAAAAIAAYAAQADAAUAAAAJAAYAAQAEAAUAAAAKAAYAAQAFAAUAAAAFAAcAAQAFAAQAAAACAAEAAQADAAMAAAADAAEAAQAEAAMAAAAEAAEAAQAEAAMAAAACAAIAAQADAAQAAAADAAIAAQAEAAQAAAAEAAIAAQAEAAQAAAACAAMAAQADAAQAAAADAAMAAQAEAAQAAAAEAAMAAQAEAAQAAAACAAQAAQADAAQAAAADAAQAAQAEAAQAAAAEAAQAAQAEAAQAAAACAAUAAQADAAQAAAADAAUAAQAEAAQAAAAEAAUAAQAEAAQAAAACAAYAAQADAAQAAAADAAYAAQAEAAQAAAAEAAYAAQAEAAQAAAACAAcAAQADAAQAAAADAAcAAQAEAAQAAAAEAAcAAQAEAAQAAAACAAgAAQADAAQAAAADAAgAAQAEAAQAAAAEAAgAAQAEAAQAAAAFAAgAAQAFAAQAAAACAAkAAQADAAUAAAADAAkAAQAEAAUAAAAEAAkAAQAEAAUAAAAFAAkAAQAFAAUAAAANAAEAAQADAAMAAAAOAAEAAQAEAAMAAAAPAAEAAQAEAAMAAAAQAAEAAQAFAAMAAAANAAIAAQADAAQAAAAOAAIAAQAEAAQAAAAPAAIAAQAEAAQAAAAQAAIAAQAFAAQAAAANAAMAAQADAAQAAAAOAAMAAQAEAAQAAAAPAAMAAQAEAAQAAAAQAAMAAQAFAAQAAAANAAQAAQADAAQAAAAOAAQAAQAEAAQAAAAPAAQAAQAEAAQAAAAQAAQAAQAFAAQAAAANAAUAAQADAAQAAAAOAAUAAQAEAAQAAAAPAAUAAQAEAAQAAAAQAAUAAQAFAAQAAAANAAYAAQADAAQAAAAOAAYAAQAEAAQAAAAPAAYAAQAEAAQAAAAQAAYAAQAFAAQAAAANAAcAAQADAAQAAAAOAAcAAQAEAAQAAAAPAAcAAQAEAAQAAAAQAAcAAQAFAAQAAAANAAgAAQADAAUAAAAOAAgAAQAEAAUAAAAPAAgAAQAEAAUAAAAQAAgAAQAFAAUAAAA=")
 
-[node name="Decoration" parent="." index="1"]
+[node name="Decoration" parent="." index="2" unique_id=1159734645]
 tile_map_data = PackedByteArray("AAAFAAIAAQAKAAIAAAADAAcAAQAKAAMAAAAEAAgAAQAKAAMAAAAOAAMAAQAKAAIAAAAPAAcAAQAKAAIAAAAJAAUAAQAKAAMAAAAPAAMAAQAKAAMAAAA=")
 
-[node name="Player" parent="." index="2"]
+[node name="Player" parent="." index="3" unique_id=749801280]
 position = Vector2(589, 347)
 
-[node name="VoidLiner" parent="EntityNode" index="0" instance=ExtResource("3_khyal")]
+[node name="VoidLiner" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="0" unique_id=1677378948 instance=ExtResource("3_khyal")]
 position = Vector2(1007, 474)
 shoot_interval = 3.0
 provoked_shoot_interval = 1.0
 chase_speed_multiplier = 1.5
-projectile_lifetime = 5.0
-projectile_spawn_time_range = Vector2(0.3, 0.3)
-idle_time_range = Vector2(3, 3)
 size = 100
 
-[node name="VoidLiner2" parent="EntityNode" index="1" instance=ExtResource("3_khyal")]
+[node name="VoidLiner2" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="1" unique_id=1432560114 instance=ExtResource("3_khyal")]
 position = Vector2(194, 557)
 shoot_interval = 3.0
 provoked_shoot_interval = 1.0
 chase_speed_multiplier = 1.5
-projectile_lifetime = 5.0
-projectile_spawn_time_range = Vector2(0.3, 0.3)
-idle_time_range = Vector2(3, 3)
 size = 100
 
-[node name="VoidLiner3" parent="EntityNode" index="2" instance=ExtResource("3_khyal")]
+[node name="VoidLiner3" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="2" unique_id=2014949880 instance=ExtResource("3_khyal")]
 position = Vector2(949, 183)
 shoot_interval = 3.0
 provoked_shoot_interval = 1.0
 chase_speed_multiplier = 1.5
-projectile_lifetime = 5.0
-projectile_spawn_time_range = Vector2(0.3, 0.3)
-idle_time_range = Vector2(3, 3)
 size = 100
 
-[node name="VoidLiner4" parent="EntityNode" index="3" instance=ExtResource("3_khyal")]
+[node name="VoidLiner4" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="3" unique_id=2120572484 instance=ExtResource("3_khyal")]
 position = Vector2(206, 372)
 shoot_interval = 3.0
 provoked_shoot_interval = 1.0
 chase_speed_multiplier = 1.5
-projectile_lifetime = 5.0
-projectile_spawn_time_range = Vector2(0.3, 0.3)
-idle_time_range = Vector2(3, 3)
 size = 100
 
-[node name="VoidLiner5" parent="EntityNode" index="4" instance=ExtResource("3_khyal")]
+[node name="VoidLiner5" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="4" unique_id=791564151 instance=ExtResource("3_khyal")]
 position = Vector2(1027, 320)
 shoot_interval = 3.0
 provoked_shoot_interval = 1.0
 chase_speed_multiplier = 1.5
-projectile_lifetime = 5.0
-projectile_spawn_time_range = Vector2(0.3, 0.3)
-idle_time_range = Vector2(3, 3)
 size = 100
 
-[node name="VoidKeeper" parent="EntityNode" index="5" instance=ExtResource("4_ndqdc")]
+[node name="VoidKeeper" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="5" unique_id=2121804608 instance=ExtResource("4_ndqdc")]
 position = Vector2(904, 351)
 projectile_lifetime = 5.0
 projectile_spawn_time_range = Vector2(0.3, 0.3)
 wander_radius = 100.0
 size = 100
 
-[node name="VoidKeeper2" parent="EntityNode" index="6" instance=ExtResource("4_ndqdc")]
+[node name="VoidKeeper2" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="6" unique_id=615244298 instance=ExtResource("4_ndqdc")]
 position = Vector2(317, 447)
 projectile_lifetime = 5.0
 projectile_spawn_time_range = Vector2(0.3, 0.3)
 wander_radius = 100.0
 size = 100
 
-[node name="VoidKeeper3" parent="EntityNode" index="7" instance=ExtResource("4_ndqdc")]
+[node name="VoidKeeper3" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="7" unique_id=409583571 instance=ExtResource("4_ndqdc")]
 position = Vector2(246, 236)
 projectile_lifetime = 5.0
 projectile_spawn_time_range = Vector2(0.3, 0.3)
 wander_radius = 100.0
 size = 100
+
+[editable path="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D"]

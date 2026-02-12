@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c858pjqlq4uir"]
+[gd_scene format=3 uid="uid://c858pjqlq4uir"]
 
 [ext_resource type="Script" uid="uid://c5yw0hf43uly8" path="res://game/scenes/entities/base_void_entity.gd" id="1_jxxrw"]
 [ext_resource type="PackedScene" uid="uid://bl3j3ma1mkw32" path="res://game/scenes/test/void_consume_3d.tscn" id="2_l176r"]
@@ -22,27 +22,27 @@ viewport_path = NodePath("VisualComponent/Viewport3DTo2D")
 [sub_resource type="CircleShape2D" id="CircleShape2D_epc2k"]
 radius = 19.646883
 
-[node name="Entity" type="CharacterBody2D"]
+[node name="Entity" type="CharacterBody2D" unique_id=333162512]
 collision_layer = 2
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_jxxrw")
 size = null
 
-[node name="VisualComponent" type="CanvasGroup" parent="."]
+[node name="VisualComponent" type="CanvasGroup" parent="." unique_id=1878557370]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_123x1")
 
-[node name="Particles2D" type="Sprite2D" parent="VisualComponent"]
+[node name="Particles2D" type="Sprite2D" parent="VisualComponent" unique_id=121192987]
 scale = Vector2(0.34, 0.34)
 texture = SubResource("ViewportTexture_8t6c5")
 
-[node name="Sprite2D" type="Sprite2D" parent="VisualComponent"]
+[node name="Sprite2D" type="Sprite2D" parent="VisualComponent" unique_id=1931630756]
 material = SubResource("ShaderMaterial_x0wcv")
 position = Vector2(-3.8146973e-06, 7.6293945e-06)
 texture = ExtResource("4_c1ajy")
 
-[node name="Viewport3DTo2D" type="SubViewport" parent="VisualComponent"]
+[node name="Viewport3DTo2D" type="SubViewport" parent="VisualComponent" unique_id=840060703]
 own_world_3d = true
 transparent_bg = true
 gui_disable_input = true
@@ -50,28 +50,26 @@ size = Vector2i(250, 250)
 script = ExtResource("5_mwwy6")
 metadata/_custom_type_script = "uid://cpmbe08fh6xs1"
 
-[node name="VoidConsume3D" parent="VisualComponent/Viewport3DTo2D" instance=ExtResource("2_l176r")]
+[node name="VoidConsume3D" parent="VisualComponent/Viewport3DTo2D" unique_id=1760225681 instance=ExtResource("2_l176r")]
 unique_name_in_owner = true
 
-[node name="VoidTransfer3D" parent="VisualComponent/Viewport3DTo2D" instance=ExtResource("6_tfyal")]
+[node name="VoidTransfer3D" parent="VisualComponent/Viewport3DTo2D" unique_id=1051689403 instance=ExtResource("6_tfyal")]
 unique_name_in_owner = true
 
-[node name="VelocityComponent" type="Node" parent="."]
+[node name="VelocityComponent" type="Node" parent="." unique_id=1441076003]
 unique_name_in_owner = true
 script = ExtResource("7_mikgi")
 
-[node name="AnimationComponent" type="Node" parent="."]
+[node name="AnimationComponent" type="Node" parent="." unique_id=540403906]
 unique_name_in_owner = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1889478177]
 unique_name_in_owner = true
 shape = SubResource("CircleShape2D_epc2k")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=820773949]
 unique_name_in_owner = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=711966693]
 unique_name_in_owner = true
-libraries = {
-&"": ExtResource("8_as0oc")
-}
+libraries/ = ExtResource("8_as0oc")

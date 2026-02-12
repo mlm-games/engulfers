@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cv00hcj82e3vi"]
+[gd_scene format=3 uid="uid://cv00hcj82e3vi"]
 
 [ext_resource type="PackedScene" uid="uid://bf7ekfb0clfv1" path="res://game/scenes/components/particles_base_3d.tscn" id="1_qs1un"]
 
@@ -40,9 +40,9 @@ material = SubResource("StandardMaterial3D_3m3fp")
 radial_segments = 8
 rings = 8
 
-[node name="VoidTransfer3D" instance=ExtResource("1_qs1un")]
+[node name="VoidTransfer3D" unique_id=1057680972 instance=ExtResource("1_qs1un")]
 
-[node name="Smoke" type="GPUParticles3D" parent="GPUParticlesNode" index="0"]
+[node name="Smoke" type="GPUParticles3D" parent="GPUParticlesNode" parent_id_path=PackedInt32Array(376856807) index="0" unique_id=1189544120]
 emitting = false
 amount = 30
 one_shot = true

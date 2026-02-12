@@ -1,24 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxndm1ljyqnx"]
+[gd_scene format=3 uid="uid://cxndm1ljyqnx"]
 
 [ext_resource type="PackedScene" uid="uid://c858pjqlq4uir" path="res://game/scenes/entities/base_entity.tscn" id="1_cxfab"]
 [ext_resource type="Script" uid="uid://iupp2y4ysn3s" path="res://game/scenes/entities/void_hunter.gd" id="2_cxfab"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_t8ci3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_cxfab"]
 viewport_path = NodePath("VisualComponent/Viewport3DTo2D")
 
-[node name="VoidHunter" instance=ExtResource("1_cxfab")]
+[node name="VoidHunter" unique_id=143418009 instance=ExtResource("1_cxfab")]
 script = ExtResource("2_cxfab")
 chase_range = 200.0
 dash_interval = 3.0
-trail_lifetime = 5.0
-trail_scene = null
+projectile_lifetime = 5.0
+projectile_spawn_time_range = Vector2(0.3, 0.3)
 wander_speed = 50.0
 wander_radius = 100.0
-idle_time = 3.0
+idle_time_range = Vector2(3, 3)
 
-[node name="Particles2D" parent="VisualComponent" index="0"]
-texture = SubResource("ViewportTexture_t8ci3")
+[node name="Particles2D" parent="VisualComponent" parent_id_path=PackedInt32Array(1878557370) index="0" unique_id=121192987]
+texture = SubResource("ViewportTexture_cxfab")
 
-[node name="DashTimer" type="Timer" parent="." index="4"]
+[node name="DashTimer" type="Timer" parent="." index="4" unique_id=205275101]
 wait_time = 3.0
 autostart = true

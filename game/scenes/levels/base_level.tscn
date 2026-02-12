@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://di8x0d1gjray0"]
+[gd_scene format=4 uid="uid://di8x0d1gjray0"]
 
 [ext_resource type="TileSet" uid="uid://ci4yy6s854qm2" path="res://game/resources/test-arena-tileset.tres" id="1_864tf"]
 [ext_resource type="Script" uid="uid://cb0dxx2y3luyg" path="res://game/scenes/levels/base_level.gd" id="1_lql12"]
@@ -9,67 +9,66 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_d2vjt"]
 viewport_path = NodePath("Sprite3DTo2D/SubViewport")
 
-[node name="BaseLevel" type="Node2D"]
+[node name="BaseLevel" type="Node2D" unique_id=1432197062]
 script = ExtResource("1_lql12")
 
-[node name="Sprite3DTo2D" type="Sprite2D" parent="."]
+[node name="Sprite3DTo2D" type="Sprite2D" parent="." unique_id=536821173]
 modulate = Color(1, 1, 1, 0.050980393)
 position = Vector2(587.49994, 328.5)
 scale = Vector2(2.2636716, 1.3222656)
 texture = SubResource("ViewportTexture_d2vjt")
 
-[node name="SubViewport" type="SubViewport" parent="Sprite3DTo2D"]
+[node name="SubViewport" type="SubViewport" parent="Sprite3DTo2D" unique_id=1598043356]
 transparent_bg = true
 gui_disable_input = true
 
-[node name="Camera3D" type="Camera3D" parent="Sprite3DTo2D/SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="Sprite3DTo2D/SubViewport" unique_id=395282369]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.727793)
 fov = 165.5
 
-[node name="ParticlesBase3D" type="Node3D" parent="Sprite3DTo2D/SubViewport"]
+[node name="ParticlesBase3D" type="Node3D" parent="Sprite3DTo2D/SubViewport" unique_id=1921804143]
 unique_name_in_owner = true
 script = ExtResource("2_rcs3o")
 
-[node name="GPUParticlesNode" type="Node3D" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D"]
+[node name="GPUParticlesNode" type="Node3D" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D" unique_id=1519444234]
 unique_name_in_owner = true
 
-[node name="Explosion3D" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode" instance=ExtResource("3_wdf0w")]
+[node name="Explosion3D" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode" unique_id=1094913779 instance=ExtResource("3_wdf0w")]
 
-[node name="Debris" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D/GPUParticlesNode" index="0"]
+[node name="Debris" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D/GPUParticlesNode" parent_id_path=PackedInt32Array(1094913779, 376856807) index="0"]
 emitting = true
 amount = 74
 one_shot = false
 explosiveness = 0.05
 
-[node name="Camera3D" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D" index="1"]
+[node name="Camera3D" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D" index="1" unique_id=1880077384]
 fov = 8.2
 
-[node name="Level" type="TileMapLayer" parent="."]
+[node name="Level" type="TileMapLayer" parent="." unique_id=609855545]
 tile_map_data = PackedByteArray("AAAFAAEAAQADAAMAAAAGAAEAAQAEAAMAAAAHAAEAAQAEAAMAAAAIAAEAAQAEAAMAAAAJAAEAAQAEAAMAAAAKAAEAAQAEAAMAAAALAAEAAQAEAAMAAAAMAAEAAQAFAAMAAAAFAAIAAQADAAQAAAAGAAIAAQAEAAQAAAAHAAIAAQAEAAQAAAAIAAIAAQAEAAQAAAAJAAIAAQAEAAQAAAAKAAIAAQAEAAQAAAALAAIAAQAEAAQAAAAMAAIAAQAFAAQAAAAFAAMAAQADAAQAAAAGAAMAAQAEAAQAAAAHAAMAAQAEAAQAAAAIAAMAAQAEAAQAAAAJAAMAAQAEAAQAAAAKAAMAAQAEAAQAAAALAAMAAQAEAAQAAAAMAAMAAQAFAAQAAAAFAAQAAQADAAQAAAAGAAQAAQAEAAQAAAAHAAQAAQAEAAQAAAAIAAQAAQAEAAQAAAAJAAQAAQAEAAQAAAAKAAQAAQAEAAQAAAALAAQAAQAEAAQAAAAMAAQAAQAFAAQAAAAFAAUAAQADAAQAAAAGAAUAAQAEAAQAAAAHAAUAAQAEAAQAAAAIAAUAAQAEAAQAAAAJAAUAAQAEAAQAAAAKAAUAAQAEAAQAAAALAAUAAQAEAAQAAAAMAAUAAQAFAAQAAAAFAAYAAQADAAQAAAAGAAYAAQAEAAQAAAAHAAYAAQAEAAQAAAAIAAYAAQAEAAQAAAAJAAYAAQAEAAQAAAAKAAYAAQAEAAQAAAALAAYAAQAEAAQAAAAMAAYAAQAFAAQAAAAFAAcAAQADAAUAAAAGAAcAAQAEAAUAAAAHAAcAAQAEAAUAAAAIAAcAAQAEAAUAAAAJAAcAAQAEAAUAAAAKAAcAAQAEAAUAAAALAAcAAQAEAAUAAAAMAAcAAQAFAAUAAAA=")
 tile_set = ExtResource("1_864tf")
 metadata/_edit_lock_ = true
 
-[node name="Decoration" type="TileMapLayer" parent="."]
+[node name="Decoration" type="TileMapLayer" parent="." unique_id=1159734645]
 tile_map_data = PackedByteArray("AAAGAAIAAQAKAAIAAAAKAAQAAQAKAAMAAFAJAAYAAQAKAAMAAGAHAAUAAQAKAAQAAFAKAAMAAQAKAAQAAFALAAUAAQAKAAIAADAIAAMAAQAKAAMAAFA=")
 tile_set = ExtResource("1_864tf")
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." instance=ExtResource("2_lldw8")]
+[node name="Player" parent="." unique_id=749801280 instance=ExtResource("2_lldw8")]
 position = Vector2(488, 297)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=206248494]
 unique_name_in_owner = true
 anchor_mode = 0
 metadata/_edit_lock_ = true
 
-[node name="EntityNode" type="Node2D" parent="."]
+[node name="EntityNode" type="Node2D" parent="." unique_id=854125802]
 unique_name_in_owner = true
 metadata/_edit_lock_ = true
 
-[node name="RetryLabel" type="RichTextLabel" parent="."]
+[node name="RetryLabel" type="RichTextLabel" parent="." unique_id=1682647329]
 unique_name_in_owner = true
 visible = false
-anchors_preset = -1
 offset_left = 17.0
 offset_top = 49.0
 offset_right = 202.0
