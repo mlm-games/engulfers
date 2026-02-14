@@ -35,7 +35,7 @@ unique_name_in_owner = true
 
 [node name="Explosion3D" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode" unique_id=1094913779 instance=ExtResource("3_wdf0w")]
 
-[node name="Debris" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D/GPUParticlesNode" parent_id_path=PackedInt32Array(1094913779, 376856807) index="0"]
+[node name="Debris" parent="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D/GPUParticlesNode" parent_id_path=PackedInt32Array(1094913779, 376856807) index="0" unique_id=1428394521]
 emitting = true
 amount = 74
 one_shot = false

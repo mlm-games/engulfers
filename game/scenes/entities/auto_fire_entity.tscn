@@ -7,5 +7,5 @@ viewport_path = NodePath("VisualComponent/Viewport3DTo2D")
 
 [node name="TitleEntity" unique_id=1180526669 instance=ExtResource("1_llqnm")]
 
-[node name="Particles2D" parent="VisualComponent" index="0"]
+[node name="Particles2D" parent="VisualComponent" parent_id_path=PackedInt32Array(1878557370) index="0" unique_id=121192987]
 texture = SubResource("ViewportTexture_llqnm")
