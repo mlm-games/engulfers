@@ -1,3 +1,17 @@
+## v0.2.0
+
+- few missed ones
+- desc. update, old desc. seems to have vanished
+- update to 4.6
+- rm sum. file
+- misc old stuff
+- Rename snapcraft.yml to snapcraft.yaml
+- Add files via upload
+- Create snap-upload.yml
+- add a better title screen, misc name changes
+- Delete dup license, have to delete unused assets
+
+
 ## v0.1.6
 
 - try adding another check for restart, since the prev one didnt work by @mlm-games
