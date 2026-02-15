@@ -6,7 +6,7 @@ var cam_t : Tween
 func _init() -> void:
 	I = self
 
-@onready var retry_label: RichTextLabel = %RetryLabel if %RetryLabel else null # Only for tutorial level
+@onready var retry_label: RichTextLabel = get_node_or_null("%RetryLabel") # Only for tutorial level
 @onready var level_id = name.to_upper() 
 @onready var camera_2d: Camera2D = %Camera2D
 

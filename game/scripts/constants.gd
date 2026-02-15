@@ -32,7 +32,7 @@ const LoadedAudio = { #All sfx
 }
 
 const Enemies = {
-	VoidKeeper = preload("uid://dabg8sulcosd5"),
+	VoidKeeper = preload("uid://cxndm1ljyqnx"),
 	#VoidLiner = preload("res://game/scenes/void_liner.tscn"),
 	TitleEntity = preload("uid://b07xf8wkt8anc")
 }

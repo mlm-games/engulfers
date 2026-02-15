@@ -25,9 +25,6 @@ position = Vector2(515, 525)
 
 [node name="VoidKeeper" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="0" unique_id=1532868365 instance=ExtResource("4_l218w")]
 position = Vector2(246, 236)
-projectile_lifetime = 5.0
-projectile_spawn_time_range = Vector2(0.3, 0.3)
-wander_radius = 100.0
 size = 100
 
 [node name="VoidHunter" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="1" unique_id=1819302186 instance=ExtResource("4_sds1v")]

@@ -16,7 +16,7 @@ wander_speed = 50.0
 wander_radius = 100.0
 idle_time_range = Vector2(3, 3)
 
-[node name="Particles2D" parent="VisualComponent" parent_id_path=PackedInt32Array(1878557370) index="0" unique_id=121192987]
+[node name="Particles2D" parent="VisualComponent" index="0"]
 texture = SubResource("ViewportTexture_cxfab")
 
 [node name="DashTimer" type="Timer" parent="." index="4" unique_id=205275101]

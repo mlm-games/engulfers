@@ -15,30 +15,18 @@ texture = SubResource("ViewportTexture_1k2pe")
 
 [node name="VoidKeeper" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="0" unique_id=1915829757 instance=ExtResource("2_5gvcb")]
 position = Vector2(704, 325)
-projectile_lifetime = 5.0
-projectile_spawn_time_range = Vector2(0.3, 0.3)
-wander_radius = 100.0
 size = 100
 
 [node name="VoidKeeper2" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="1" unique_id=462069746 instance=ExtResource("2_5gvcb")]
 position = Vector2(722, 179)
-projectile_lifetime = 5.0
-projectile_spawn_time_range = Vector2(0.3, 0.3)
-wander_radius = 100.0
 size = 100
 
 [node name="VoidKeeper3" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="2" unique_id=1485121544 instance=ExtResource("2_5gvcb")]
 position = Vector2(689, 438)
-projectile_lifetime = 5.0
-projectile_spawn_time_range = Vector2(0.3, 0.3)
-wander_radius = 100.0
 size = 100
 
 [node name="VoidKeeper4" parent="EntityNode" parent_id_path=PackedInt32Array(854125802) index="3" unique_id=148538369 instance=ExtResource("2_5gvcb")]
 position = Vector2(486, 175)
-projectile_lifetime = 5.0
-projectile_spawn_time_range = Vector2(0.3, 0.3)
-wander_radius = 100.0
 size = 100
 
 [editable path="Sprite3DTo2D/SubViewport/ParticlesBase3D/GPUParticlesNode/Explosion3D"]
